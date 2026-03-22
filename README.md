@@ -51,14 +51,23 @@ The practical version of the claim is stronger than “drift happens first somew
 
 That is the theory story this repository tests. The benchmark program reduces it into four narrow empirical claims, benchmarks each one separately, and then recombines them into a single validated findings package.
 
-## Why You Should Trust This Conclusion
+## Benchmark Design
 
-This repository benchmarks four atomic claims:
+The conclusion rests on four atomic benchmarks:
 
 1. In a gradual-breaking regime, drift can become detectable before direct symmetry detection.
 2. This ordering is not generic. In an instant-break regime, direct symmetry detection can appear at or before drift.
 3. Under a fixed practical observation budget, drift can be the more sensitive detector.
 4. At the time the drift alarm fires, the direct symmetry observable can still remain below its own detection threshold.
+
+What makes the design informative is that the suite keeps the core setup controlled while varying the question each benchmark asks:
+
+- the same paired-MLP family is used across the suite
+- the same covariance-based direct symmetry detector is used across the suite
+- detector thresholds are held fixed rather than retuned benchmark by benchmark
+- `B2` provides the reversal control
+- `B3` imposes a finite observation constraint
+- `B4` measures the exact saved model state at the alarm step
 
 The benchmark strategy is documented in [TEST_PLAN.md](/Users/velocityworks/IdeaProjects/noether-early-warning/TEST_PLAN.md), and the aligned claims document is [core_claim.md](/Users/velocityworks/IdeaProjects/noether-early-warning/docs/core_claim.md).
 
