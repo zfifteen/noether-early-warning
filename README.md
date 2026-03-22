@@ -45,11 +45,9 @@ The core evidence is easiest to read as a compact benchmark table:
 
 The working hypothesis of this repository is that, in gradual symmetry-breaking regimes, a drift observable can become detectable before a direct symmetry observable does, and that this earlier drift signal can be practically useful as an early warning.
 
-The intuition is that these two kinds of signal do not have to become visible on the same timescale. A direct symmetry observable may still sit below threshold while a drift observable linked to the same breakdown process is already showing a stable deviation in the time-series. If that happens consistently, then drift is not just correlated with breakdown. It becomes an early warning signal.
+The key idea is that these two kinds of signal do not have to become visible on the same timescale. A direct symmetry observable may still sit below threshold while a drift observable linked to the same breakdown process is already showing a stable deviation in the time-series. If that happens consistently, then drift is not just correlated with breakdown. It becomes an early warning signal.
 
-The practical version of the claim is stronger than “drift happens first somewhere in hindsight.” A useful early warning signal should satisfy several stricter conditions. It should appear before the direct symmetry signal in gradual regimes. That ordering should reverse in instant-break regimes rather than showing up everywhere indiscriminately. Under a finite observation budget, the drift signal should be easier to detect. And when the drift alarm fires, the direct symmetry observable should still usually remain below its own threshold.
-
-That is the theory story this repository tests. The benchmark program reduces it into four narrow empirical claims, benchmarks each one separately, and then recombines them into a single validated findings package.
+The practical version of the claim is stricter than simple hindsight ordering. A useful early warning signal should appear first in gradual regimes, reverse in instant-break controls, remain easier to detect under finite observation limits, and still be useful at the exact moment the alarm fires. The benchmark suite is designed to test that stronger practical version directly.
 
 ## Benchmark Design
 
@@ -69,7 +67,7 @@ What makes the design informative is that the suite keeps the core setup control
 - `B3` imposes a finite observation constraint
 - `B4` measures the exact saved model state at the alarm step
 
-The benchmark strategy is documented in [TEST_PLAN.md](/Users/velocityworks/IdeaProjects/noether-early-warning/TEST_PLAN.md), and the aligned claims document is [core_claim.md](/Users/velocityworks/IdeaProjects/noether-early-warning/docs/core_claim.md).
+The benchmark strategy is documented in [TEST_PLAN.md](./TEST_PLAN.md), and the aligned claims document is [core_claim.md](./docs/core_claim.md).
 
 ## Quick Start
 
@@ -100,16 +98,16 @@ Run tests:
 pytest -q early_warning_research/tests
 ```
 
-Artifacts are written under [artifacts/](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts). The consolidated suite artifact used in this README is:
+Artifacts are written under [artifacts/](./artifacts). The consolidated suite artifact used in this README is:
 
-- [summary.json](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/summary.json)
-- [REPORT.md](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/REPORT.md)
+- [summary.json](./artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/summary.json)
+- [REPORT.md](./artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/REPORT.md)
 
 ## Benchmark Summary
 
 ### B1: Drift Before Direct Symmetry Detection
 
-Verdict: `SUPPORTED`
+Result: `SUPPORTED`
 
 Key result:
 
@@ -134,7 +132,7 @@ This onset-ordering plot shows the same pattern across the full sweep: the direc
 
 ### B2: Instant-Break Reversal
 
-Verdict: `SUPPORTED`
+Result: `SUPPORTED`
 
 Key result:
 
@@ -159,7 +157,7 @@ This onset-ordering plot shows the reversal cleanly across the sweep: the symmet
 
 ### B3: Fixed-Budget Sensitivity
 
-Verdict: `SUPPORTED`
+Result: `SUPPORTED`
 
 Key result:
 
@@ -185,7 +183,7 @@ This plot visualizes which runs yield both detections within budget and which ru
 
 ### B4: Exact Alarm-Time Separation
 
-Verdict: `SUPPORTED`
+Result: `SUPPORTED`
 
 Key result:
 
@@ -250,28 +248,28 @@ Taken together, they do not just show that drift can come first. They show that 
 
 ### B1 Fine-Grained View
 
-- Artifact: [summary.json](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark1/20260322T152418Z_benchmark1/summary.json)
+- Artifact: [summary.json](./artifacts/benchmark1/20260322T152418Z_benchmark1/summary.json)
 - All 27 runs were comparable and supportive.
 - The median lead was `84` steps, but some runs had much larger separations.
 - This means the early-warning effect is not a marginal edge case in the benchmarked gradual regime.
 
 ### B2 Fine-Grained View
 
-- Artifact: [summary.json](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark2/20260322T154257Z_benchmark2/summary.json)
+- Artifact: [summary.json](./artifacts/benchmark2/20260322T154257Z_benchmark2/summary.json)
 - All 27 runs were comparable and supportive for the reversal claim.
 - The median lead was `-37` steps.
 - This is an important falsification guard: if direct symmetry is already broken, the ordering flips the other way.
 
 ### B3 Fine-Grained View
 
-- Artifact: [summary.json](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark3/20260322T155414Z_benchmark3/summary.json)
+- Artifact: [summary.json](./artifacts/benchmark3/20260322T155414Z_benchmark3/summary.json)
 - Drift was detected within 300 steps in every run.
 - Direct symmetry was detected within the same 300-step budget in only 18 runs.
 - The `9` drift-only runs are the practical win cases for the hypothesis.
 
 ### B4 Fine-Grained View
 
-- Artifact: [summary.json](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark4/20260322T161101Z_benchmark4/summary.json)
+- Artifact: [summary.json](./artifacts/benchmark4/20260322T161101Z_benchmark4/summary.json)
 - The final benchmark design uses the exact saved model state at the drift-onset step.
 - This corrected an earlier draft benchmark that used the next scheduled probe and therefore misstated the practical claim.
 - Under the corrected design, `24/27` exact alarm-state measurements were supportive.
@@ -279,15 +277,15 @@ Taken together, they do not just show that drift can come first. They show that 
 
 ## Project Structure
 
-- [core_claim.md](/Users/velocityworks/IdeaProjects/noether-early-warning/docs/core_claim.md): aligned claims document
-- [TEST_PLAN.md](/Users/velocityworks/IdeaProjects/noether-early-warning/TEST_PLAN.md): atomic benchmark strategy
-- [FINDINGS_REPORT.md](/Users/velocityworks/IdeaProjects/noether-early-warning/docs/FINDINGS_REPORT.md): standalone findings report
-- [early_warning_research](/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research): benchmark implementations
-- [archive](/Users/velocityworks/IdeaProjects/noether-early-warning/archive): historical exploratory material
+- [core_claim.md](./docs/core_claim.md): aligned claims document
+- [TEST_PLAN.md](./TEST_PLAN.md): atomic benchmark strategy
+- [FINDINGS_REPORT.md](./docs/FINDINGS_REPORT.md): standalone findings report
+- [early_warning_research](./early_warning_research): benchmark implementations
+- [archive](./archive): historical exploratory material
 
 ## Bottom Line
 
-The benchmark suite supports the full claims package expressed in [core_claim.md](/Users/velocityworks/IdeaProjects/noether-early-warning/docs/core_claim.md).
+The benchmark suite supports the full claims package expressed in [core_claim.md](./docs/core_claim.md).
 
 The main conclusion is simple:
 
