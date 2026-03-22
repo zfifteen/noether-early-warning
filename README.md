@@ -8,7 +8,7 @@ A benchmark suite for earlier practical detection of gradual symmetry breaking.
 
 If you monitor a system for gradual breakage, waiting for the direct symmetry metric can be too late.
 
-This repository benchmarks when a drift-based alarm is practically more useful than a direct symmetry metric for catching gradual symmetry breaking early. It does not just ask whether one signal can appear before another in hindsight. It tests whether that advantage is real, regime-specific, visible under finite monitoring budgets, and still present at the exact moment the drift alarm fires.
+This repository benchmarks when a drift-based alarm is practically more useful than a direct symmetry metric for catching gradual symmetry breaking early. It does not just ask whether one signal can appear before another in hindsight. It tests whether that advantage is real, regime-specific, detectable under finite monitoring budgets, and still present at the exact moment the drift alarm fires.
 
 That is what makes the result useful rather than merely interesting:
 
@@ -21,7 +21,7 @@ That is what makes the result useful rather than merely interesting:
 
 The benchmark suite supports the full four-part claim package.
 
-Across the consolidated `B1`-`B4` suite, every benchmark returned `SUPPORTED`. In this repository’s benchmarked regime, the evidence supports the conclusion that drift is an earlier and practically useful warning signal for gradual symmetry breaking.
+Across the consolidated `B1`-`B4` suite, all benchmarks support the claim package. In this repository’s benchmarked regime, the evidence supports the conclusion that drift is an earlier and practically useful warning signal for gradual symmetry breaking.
 
 The strongest high-level findings are:
 
@@ -71,30 +71,15 @@ The benchmark strategy is documented in [TEST_PLAN.md](./TEST_PLAN.md), and the 
 
 ## Quick Start
 
-Install dependencies from the repository root:
-
 ```bash
 pip install -r requirements.txt
-```
-
-Run the consolidated benchmark suite:
-
-```bash
 python -m early_warning_research.benchmark_suite --quiet
-```
 
-Run the individual atomic benchmarks:
-
-```bash
 python -m early_warning_research.run --benchmark benchmark1
 python -m early_warning_research.benchmark2
 python -m early_warning_research.benchmark3
 python -m early_warning_research.benchmark4
-```
 
-Run tests:
-
-```bash
 pytest -q early_warning_research/tests
 ```
 
