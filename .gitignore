@@ -4,5 +4,5 @@
 __pycache__/
 .pytest_cache/
 .benchmarks/
-#artifacts/*
+artifacts/*
 !artifacts/.gitkeep
