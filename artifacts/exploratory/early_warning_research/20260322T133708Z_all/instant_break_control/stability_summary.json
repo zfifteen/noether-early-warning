@@ -1,0 +1,292 @@
+{
+  "suite_name": "instant_break_control",
+  "baseline_robust_verdict": "FALSIFIED",
+  "robust_flip_count": 0,
+  "detector_flip_counts": {
+    "covariance_mismatch": 0,
+    "mean_gradient_mismatch": 0,
+    "activation_stat_mismatch": 0
+  },
+  "preset_summaries": {
+    "baseline": {
+      "robust_verdict": "FALSIFIED",
+      "robust_details": {
+        "supported_detectors": [],
+        "falsified_detectors": [
+          "activation_stat_mismatch",
+          "covariance_mismatch",
+          "mean_gradient_mismatch"
+        ],
+        "inconclusive_detectors": [],
+        "supported_detector_count": 0,
+        "falsified_detector_count": 3,
+        "inconclusive_detector_count": 0
+      },
+      "detector_summaries": {
+        "covariance_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 8,
+            "supportive_runs": 0,
+            "falsifying_runs": 8,
+            "censored_runs": 0,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -20.0
+          }
+        },
+        "mean_gradient_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 8,
+            "supportive_runs": 0,
+            "falsifying_runs": 8,
+            "censored_runs": 0,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -20.0
+          }
+        },
+        "activation_stat_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 5,
+            "supportive_runs": 0,
+            "falsifying_runs": 5,
+            "censored_runs": 3,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -20.0
+          }
+        }
+      }
+    },
+    "local_low": {
+      "robust_verdict": "FALSIFIED",
+      "robust_details": {
+        "supported_detectors": [],
+        "falsified_detectors": [
+          "activation_stat_mismatch",
+          "covariance_mismatch",
+          "mean_gradient_mismatch"
+        ],
+        "inconclusive_detectors": [],
+        "supported_detector_count": 0,
+        "falsified_detector_count": 3,
+        "inconclusive_detector_count": 0
+      },
+      "detector_summaries": {
+        "covariance_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 8,
+            "supportive_runs": 0,
+            "falsifying_runs": 8,
+            "censored_runs": 0,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -14.0
+          }
+        },
+        "mean_gradient_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 8,
+            "supportive_runs": 0,
+            "falsifying_runs": 8,
+            "censored_runs": 0,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -14.0
+          }
+        },
+        "activation_stat_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 6,
+            "supportive_runs": 0,
+            "falsifying_runs": 6,
+            "censored_runs": 2,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -14.0
+          }
+        }
+      }
+    },
+    "local_high": {
+      "robust_verdict": "FALSIFIED",
+      "robust_details": {
+        "supported_detectors": [],
+        "falsified_detectors": [
+          "activation_stat_mismatch",
+          "covariance_mismatch",
+          "mean_gradient_mismatch"
+        ],
+        "inconclusive_detectors": [],
+        "supported_detector_count": 0,
+        "falsified_detector_count": 3,
+        "inconclusive_detector_count": 0
+      },
+      "detector_summaries": {
+        "covariance_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 8,
+            "supportive_runs": 0,
+            "falsifying_runs": 8,
+            "censored_runs": 0,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -26.0
+          }
+        },
+        "mean_gradient_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 8,
+            "supportive_runs": 0,
+            "falsifying_runs": 8,
+            "censored_runs": 0,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -26.0
+          }
+        },
+        "activation_stat_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 5,
+            "supportive_runs": 0,
+            "falsifying_runs": 5,
+            "censored_runs": 3,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -26.0
+          }
+        }
+      }
+    },
+    "looser": {
+      "robust_verdict": "FALSIFIED",
+      "robust_details": {
+        "supported_detectors": [],
+        "falsified_detectors": [
+          "activation_stat_mismatch",
+          "covariance_mismatch",
+          "mean_gradient_mismatch"
+        ],
+        "inconclusive_detectors": [],
+        "supported_detector_count": 0,
+        "falsified_detector_count": 3,
+        "inconclusive_detector_count": 0
+      },
+      "detector_summaries": {
+        "covariance_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 8,
+            "supportive_runs": 0,
+            "falsifying_runs": 8,
+            "censored_runs": 0,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -12.0
+          }
+        },
+        "mean_gradient_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 8,
+            "supportive_runs": 0,
+            "falsifying_runs": 8,
+            "censored_runs": 0,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -12.0
+          }
+        },
+        "activation_stat_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 6,
+            "supportive_runs": 0,
+            "falsifying_runs": 6,
+            "censored_runs": 2,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -12.0
+          }
+        }
+      }
+    },
+    "stricter": {
+      "robust_verdict": "FALSIFIED",
+      "robust_details": {
+        "supported_detectors": [],
+        "falsified_detectors": [
+          "activation_stat_mismatch",
+          "covariance_mismatch",
+          "mean_gradient_mismatch"
+        ],
+        "inconclusive_detectors": [],
+        "supported_detector_count": 0,
+        "falsified_detector_count": 3,
+        "inconclusive_detector_count": 0
+      },
+      "detector_summaries": {
+        "covariance_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 8,
+            "supportive_runs": 0,
+            "falsifying_runs": 8,
+            "censored_runs": 0,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -28.0
+          }
+        },
+        "mean_gradient_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 8,
+            "supportive_runs": 0,
+            "falsifying_runs": 8,
+            "censored_runs": 0,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -28.0
+          }
+        },
+        "activation_stat_mismatch": {
+          "verdict": "FALSIFIED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 5,
+            "supportive_runs": 0,
+            "falsifying_runs": 5,
+            "censored_runs": 3,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 1.0,
+            "median_lead_steps": -28.0
+          }
+        }
+      }
+    }
+  }
+}

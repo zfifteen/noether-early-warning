@@ -1,0 +1,162 @@
+{
+  "suite_name": "main_paired_mlp",
+  "timestamp_utc": "2026-03-22T13:54:22.307510+00:00",
+  "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_window_extension/20260322T135323Z_main_paired_mlp_window_extension",
+  "base_suite": {
+    "name": "main_paired_mlp",
+    "description": "Claim-bearing paired-hidden-unit MLP with near-symmetric initialization.",
+    "kind": "paired_mlp",
+    "training": {
+      "total_steps": 300,
+      "train_size": 256,
+      "probe_size": 256,
+      "batch_size": null
+    },
+    "sweep": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "learning_rates": [
+        0.02,
+        0.04,
+        0.08
+      ],
+      "input_scales": [
+        0.75,
+        1.25,
+        1.75
+      ]
+    },
+    "probe": {
+      "every_steps": 15,
+      "microbatches": 12,
+      "microbatch_size": 32
+    },
+    "detector": {
+      "drift_window": 50,
+      "drift_running_mean_window": 10,
+      "drift_effect_floor": 0.05,
+      "drift_p_threshold": 1e-06,
+      "drift_consecutive": 2,
+      "symmetry_baseline_probes": 3,
+      "symmetry_z_threshold": 2.5,
+      "symmetry_floor": 0.02,
+      "symmetry_consecutive": 2
+    },
+    "model": {
+      "input_dim": 8,
+      "pair_count": 2,
+      "init_noise": 0.002,
+      "teacher_hidden": 3,
+      "hidden_layers": 1,
+      "use_layer_norm": false
+    }
+  },
+  "base_total_runs": 27,
+  "base_censored_runs": 9,
+  "base_censored_run_ids": [
+    "seed0_lr0.0200_scale0.75",
+    "seed0_lr0.0400_scale0.75",
+    "seed0_lr0.0800_scale0.75",
+    "seed1_lr0.0200_scale0.75",
+    "seed1_lr0.0200_scale1.25",
+    "seed1_lr0.0200_scale1.75",
+    "seed2_lr0.0200_scale1.25",
+    "seed2_lr0.0400_scale0.75",
+    "seed2_lr0.0800_scale0.75"
+  ],
+  "extension_steps": [
+    1200,
+    2400,
+    4800,
+    9600
+  ],
+  "window_summaries": [
+    {
+      "extended_total_steps": 1200,
+      "resolved_supportive_runs": 4,
+      "remaining_censored_runs": 5,
+      "supportive_fraction_of_original_censored": 0.4444444444444444,
+      "median_covariance_onset_among_resolved": 465,
+      "resolved_run_ids": [
+        "seed0_lr0.0800_scale0.75",
+        "seed1_lr0.0200_scale1.25",
+        "seed1_lr0.0200_scale1.75",
+        "seed2_lr0.0200_scale1.25"
+      ],
+      "still_censored_run_ids": [
+        "seed0_lr0.0200_scale0.75",
+        "seed0_lr0.0400_scale0.75",
+        "seed1_lr0.0200_scale0.75",
+        "seed2_lr0.0400_scale0.75",
+        "seed2_lr0.0800_scale0.75"
+      ]
+    },
+    {
+      "extended_total_steps": 2400,
+      "resolved_supportive_runs": 6,
+      "remaining_censored_runs": 3,
+      "supportive_fraction_of_original_censored": 0.6666666666666666,
+      "median_covariance_onset_among_resolved": 510,
+      "resolved_run_ids": [
+        "seed0_lr0.0400_scale0.75",
+        "seed0_lr0.0800_scale0.75",
+        "seed1_lr0.0200_scale0.75",
+        "seed1_lr0.0200_scale1.25",
+        "seed1_lr0.0200_scale1.75",
+        "seed2_lr0.0200_scale1.25"
+      ],
+      "still_censored_run_ids": [
+        "seed0_lr0.0200_scale0.75",
+        "seed2_lr0.0400_scale0.75",
+        "seed2_lr0.0800_scale0.75"
+      ]
+    },
+    {
+      "extended_total_steps": 4800,
+      "resolved_supportive_runs": 8,
+      "remaining_censored_runs": 1,
+      "supportive_fraction_of_original_censored": 0.8888888888888888,
+      "median_covariance_onset_among_resolved": 1470,
+      "resolved_run_ids": [
+        "seed0_lr0.0200_scale0.75",
+        "seed0_lr0.0400_scale0.75",
+        "seed0_lr0.0800_scale0.75",
+        "seed1_lr0.0200_scale0.75",
+        "seed1_lr0.0200_scale1.25",
+        "seed1_lr0.0200_scale1.75",
+        "seed2_lr0.0200_scale1.25",
+        "seed2_lr0.0800_scale0.75"
+      ],
+      "still_censored_run_ids": [
+        "seed2_lr0.0400_scale0.75"
+      ]
+    },
+    {
+      "extended_total_steps": 9600,
+      "resolved_supportive_runs": 9,
+      "remaining_censored_runs": 0,
+      "supportive_fraction_of_original_censored": 1.0,
+      "median_covariance_onset_among_resolved": 1470,
+      "resolved_run_ids": [
+        "seed0_lr0.0200_scale0.75",
+        "seed0_lr0.0400_scale0.75",
+        "seed0_lr0.0800_scale0.75",
+        "seed1_lr0.0200_scale0.75",
+        "seed1_lr0.0200_scale1.25",
+        "seed1_lr0.0200_scale1.75",
+        "seed2_lr0.0200_scale1.25",
+        "seed2_lr0.0400_scale0.75",
+        "seed2_lr0.0800_scale0.75"
+      ],
+      "still_censored_run_ids": []
+    }
+  ],
+  "artifact_files": {
+    "base_runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_window_extension/20260322T135323Z_main_paired_mlp_window_extension/base_runs.csv",
+    "extended_runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_window_extension/20260322T135323Z_main_paired_mlp_window_extension/extended_runs.csv",
+    "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_window_extension/20260322T135323Z_main_paired_mlp_window_extension/summary.json"
+  }
+}

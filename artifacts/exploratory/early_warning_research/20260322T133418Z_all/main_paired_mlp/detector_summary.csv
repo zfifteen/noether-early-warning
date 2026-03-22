@@ -1,0 +1,4 @@
+detector_name,verdict,total_runs,comparable_runs,supportive_runs,falsifying_runs,censored_runs,positive_fraction,nonpositive_fraction,median_lead_steps
+covariance_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+mean_gradient_mismatch,SUPPORTED,8,3,3,0,5,1.0,0.0,77.0
+activation_stat_mismatch,SUPPORTED,8,1,1,0,7,1.0,0.0,16.0

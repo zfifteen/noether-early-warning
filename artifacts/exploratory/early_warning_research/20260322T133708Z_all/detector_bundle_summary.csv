@@ -1,0 +1,14 @@
+suite_name,detector_name,verdict,total_runs,comparable_runs,supportive_runs,falsifying_runs,censored_runs,positive_fraction,nonpositive_fraction,median_lead_steps
+main_paired_mlp,covariance_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp,mean_gradient_mismatch,SUPPORTED,8,3,3,0,5,1.0,0.0,77.0
+main_paired_mlp,activation_stat_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+instant_break_control,covariance_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-20.0
+instant_break_control,mean_gradient_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-20.0
+instant_break_control,activation_stat_mismatch,FALSIFIED,8,5,0,5,3,0.0,1.0,-20.0
+main_paired_mlp_stochastic,covariance_mismatch,SUPPORTED,8,1,1,0,7,1.0,0.0,81.0
+main_paired_mlp_stochastic,mean_gradient_mismatch,SUPPORTED,8,1,1,0,7,1.0,0.0,126.0
+main_paired_mlp_stochastic,activation_stat_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+instant_break_control_stochastic,covariance_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-23.0
+instant_break_control_stochastic,mean_gradient_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-23.0
+instant_break_control_stochastic,activation_stat_mismatch,FALSIFIED,8,7,0,7,1,0.0,1.0,-23.0
+toy_sanity,scale_charge_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,

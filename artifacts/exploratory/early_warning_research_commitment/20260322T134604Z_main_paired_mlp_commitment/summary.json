@@ -1,0 +1,122 @@
+{
+  "suite_name": "main_paired_mlp",
+  "timestamp_utc": "2026-03-22T13:46:07.745510+00:00",
+  "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_commitment/20260322T134604Z_main_paired_mlp_commitment",
+  "parameters": {
+    "horizon_short": 30,
+    "horizon_long": 60,
+    "suite": "main_paired_mlp",
+    "classifier": "supportive vs censored under covariance-mismatch direct symmetry detection"
+  },
+  "counts": {
+    "supportive_runs": 18,
+    "censored_runs": 9,
+    "falsifying_runs": 0,
+    "no_ordering_runs": 0
+  },
+  "onset_timing_stats": {
+    "supportive_count": 18,
+    "censored_count": 9,
+    "supportive_median": 52.0,
+    "censored_median": 52.0,
+    "supportive_mean": 52.05555555555556,
+    "censored_mean": 52.44444444444444,
+    "mannwhitney_p_value": 0.12243152868470933,
+    "auc_supportive_vs_censored": 0.3271604938271605
+  },
+  "path_efficiency_30_stats": {
+    "supportive_count": 18,
+    "censored_count": 9,
+    "supportive_median": 0.997040184155798,
+    "censored_median": 0.9980963653424708,
+    "supportive_mean": 0.9949414942635502,
+    "censored_mean": 0.9969659675201847,
+    "mannwhitney_p_value": 0.554188017359466,
+    "auc_supportive_vs_censored": 0.42592592592592593
+  },
+  "path_efficiency_60_stats": {
+    "supportive_count": 18,
+    "censored_count": 9,
+    "supportive_median": 0.9885241763449881,
+    "censored_median": 0.9944341185790225,
+    "supportive_mean": 0.985083080349547,
+    "censored_mean": 0.99199780269061,
+    "mannwhitney_p_value": 0.29169697358948876,
+    "auc_supportive_vs_censored": 0.37037037037037035
+  },
+  "norm_growth_ratio_30_stats": {
+    "supportive_count": 18,
+    "censored_count": 9,
+    "supportive_median": 1.0,
+    "censored_median": 1.0,
+    "supportive_mean": 1.0,
+    "censored_mean": 1.0,
+    "mannwhitney_p_value": 1.0,
+    "auc_supportive_vs_censored": 0.5
+  },
+  "norm_growth_ratio_60_stats": {
+    "supportive_count": 18,
+    "censored_count": 9,
+    "supportive_median": 1.0,
+    "censored_median": 1.0,
+    "supportive_mean": 1.0,
+    "censored_mean": 1.0,
+    "mannwhitney_p_value": 1.0,
+    "auc_supportive_vs_censored": 0.5
+  },
+  "symmetry_gain_30_stats": {
+    "supportive_count": 18,
+    "censored_count": 9,
+    "supportive_median": 0.013517206133142098,
+    "censored_median": 0.0006585121813003298,
+    "supportive_mean": 0.02091164040494837,
+    "censored_mean": 0.0013519274442132492,
+    "mannwhitney_p_value": 0.019269933664559938,
+    "auc_supportive_vs_censored": 0.7839506172839507
+  },
+  "symmetry_gain_60_stats": {
+    "supportive_count": 18,
+    "censored_count": 9,
+    "supportive_median": 0.02938468249412236,
+    "censored_median": 0.00083901482357233,
+    "supportive_mean": 0.05634628437897588,
+    "censored_mean": 0.0017073160398839036,
+    "mannwhitney_p_value": 0.00035063737561386423,
+    "auc_supportive_vs_censored": 0.9320987654320988
+  },
+  "symmetry_max_gain_30_stats": {
+    "supportive_count": 18,
+    "censored_count": 9,
+    "supportive_median": 0.0048470925697673166,
+    "censored_median": 0.001838766612175322,
+    "supportive_mean": 0.009084933576843899,
+    "censored_mean": 0.002706877068463235,
+    "mannwhitney_p_value": 0.5859339518288261,
+    "auc_supportive_vs_censored": 0.5679012345679012
+  },
+  "symmetry_max_gain_60_stats": {
+    "supportive_count": 18,
+    "censored_count": 9,
+    "supportive_median": 0.023529746754687306,
+    "censored_median": 0.001838766612175322,
+    "supportive_mean": 0.04438370972304433,
+    "censored_mean": 0.002908139709498944,
+    "mannwhitney_p_value": 0.002210786372468205,
+    "auc_supportive_vs_censored": 0.8703703703703703
+  },
+  "terminal_symmetry_score_stats": {
+    "supportive_count": 18,
+    "censored_count": 9,
+    "supportive_median": 0.21113946026595665,
+    "censored_median": 0.011761854022849464,
+    "supportive_mean": 0.19982033759680212,
+    "censored_mean": 0.012247567566910329,
+    "mannwhitney_p_value": 5.39998328630909e-05,
+    "auc_supportive_vs_censored": 0.9876543209876543
+  },
+  "artifact_files": {
+    "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_commitment/20260322T134604Z_main_paired_mlp_commitment/runs.csv",
+    "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_commitment/20260322T134604Z_main_paired_mlp_commitment/summary.json",
+    "commitment_separation_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_commitment/20260322T134604Z_main_paired_mlp_commitment/commitment_separation.png"
+  }
+}

@@ -1,0 +1,2 @@
+detector_name,verdict,total_runs,comparable_runs,supportive_runs,falsifying_runs,censored_runs,positive_fraction,nonpositive_fraction,median_lead_steps
+scale_charge_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,

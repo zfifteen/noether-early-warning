@@ -1,0 +1,16 @@
+suite_name,preset_name,detector_name,verdict,total_runs,comparable_runs,supportive_runs,falsifying_runs,censored_runs,positive_fraction,nonpositive_fraction,median_lead_steps
+main_paired_mlp_stochastic,baseline,covariance_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp_stochastic,baseline,mean_gradient_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp_stochastic,baseline,activation_stat_mismatch,SUPPORTED,8,1,1,0,7,1.0,0.0,53.0
+main_paired_mlp_stochastic,local_low,covariance_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp_stochastic,local_low,mean_gradient_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp_stochastic,local_low,activation_stat_mismatch,SUPPORTED,8,1,1,0,7,1.0,0.0,45.0
+main_paired_mlp_stochastic,local_high,covariance_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp_stochastic,local_high,mean_gradient_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp_stochastic,local_high,activation_stat_mismatch,SUPPORTED,8,1,1,0,7,1.0,0.0,45.0
+main_paired_mlp_stochastic,looser,covariance_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp_stochastic,looser,mean_gradient_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp_stochastic,looser,activation_stat_mismatch,SUPPORTED,8,1,1,0,7,1.0,0.0,47.0
+main_paired_mlp_stochastic,stricter,covariance_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp_stochastic,stricter,mean_gradient_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp_stochastic,stricter,activation_stat_mismatch,SUPPORTED,8,1,1,0,7,1.0,0.0,43.0

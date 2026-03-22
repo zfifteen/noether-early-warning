@@ -1,0 +1,43 @@
+{
+  "suite_name": "toy_sanity",
+  "primary_detector": "scale_charge_mismatch",
+  "primary_detector_verdict": "INCONCLUSIVE",
+  "primary_detector_verdict_stats": {
+    "total_runs": 8,
+    "comparable_runs": 0,
+    "supportive_runs": 0,
+    "falsifying_runs": 0,
+    "censored_runs": 8,
+    "positive_fraction": 0.0,
+    "nonpositive_fraction": 0.0,
+    "median_lead_steps": null
+  },
+  "suite_verdict": "INCONCLUSIVE",
+  "robustness_details": {
+    "supported_detectors": [],
+    "falsified_detectors": [],
+    "inconclusive_detectors": [
+      "scale_charge_mismatch"
+    ],
+    "supported_detector_count": 0,
+    "falsified_detector_count": 0,
+    "inconclusive_detector_count": 1
+  },
+  "detector_summaries": {
+    "scale_charge_mismatch": {
+      "detector_name": "scale_charge_mismatch",
+      "verdict": "INCONCLUSIVE",
+      "verdict_stats": {
+        "total_runs": 8,
+        "comparable_runs": 0,
+        "supportive_runs": 0,
+        "falsifying_runs": 0,
+        "censored_runs": 8,
+        "positive_fraction": 0.0,
+        "nonpositive_fraction": 0.0,
+        "median_lead_steps": null
+      },
+      "lead_distribution": []
+    }
+  }
+}

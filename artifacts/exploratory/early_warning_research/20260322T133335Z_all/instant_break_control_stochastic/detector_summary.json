@@ -1,0 +1,101 @@
+{
+  "suite_name": "instant_break_control_stochastic",
+  "primary_detector": "covariance_mismatch",
+  "primary_detector_verdict": "FALSIFIED",
+  "primary_detector_verdict_stats": {
+    "total_runs": 8,
+    "comparable_runs": 8,
+    "supportive_runs": 0,
+    "falsifying_runs": 8,
+    "censored_runs": 0,
+    "positive_fraction": 0.0,
+    "nonpositive_fraction": 1.0,
+    "median_lead_steps": -23.0
+  },
+  "suite_verdict": "FALSIFIED",
+  "robustness_details": {
+    "supported_detectors": [],
+    "falsified_detectors": [
+      "activation_stat_mismatch",
+      "covariance_mismatch",
+      "mean_gradient_mismatch"
+    ],
+    "inconclusive_detectors": [],
+    "supported_detector_count": 0,
+    "falsified_detector_count": 3,
+    "inconclusive_detector_count": 0
+  },
+  "detector_summaries": {
+    "covariance_mismatch": {
+      "detector_name": "covariance_mismatch",
+      "verdict": "FALSIFIED",
+      "verdict_stats": {
+        "total_runs": 8,
+        "comparable_runs": 8,
+        "supportive_runs": 0,
+        "falsifying_runs": 8,
+        "censored_runs": 0,
+        "positive_fraction": 0.0,
+        "nonpositive_fraction": 1.0,
+        "median_lead_steps": -23.0
+      },
+      "lead_distribution": [
+        -23,
+        -24,
+        -23,
+        -24,
+        -23,
+        -23,
+        -22,
+        -22
+      ]
+    },
+    "mean_gradient_mismatch": {
+      "detector_name": "mean_gradient_mismatch",
+      "verdict": "FALSIFIED",
+      "verdict_stats": {
+        "total_runs": 8,
+        "comparable_runs": 8,
+        "supportive_runs": 0,
+        "falsifying_runs": 8,
+        "censored_runs": 0,
+        "positive_fraction": 0.0,
+        "nonpositive_fraction": 1.0,
+        "median_lead_steps": -23.0
+      },
+      "lead_distribution": [
+        -23,
+        -24,
+        -23,
+        -24,
+        -23,
+        -23,
+        -22,
+        -22
+      ]
+    },
+    "activation_stat_mismatch": {
+      "detector_name": "activation_stat_mismatch",
+      "verdict": "FALSIFIED",
+      "verdict_stats": {
+        "total_runs": 8,
+        "comparable_runs": 7,
+        "supportive_runs": 0,
+        "falsifying_runs": 7,
+        "censored_runs": 1,
+        "positive_fraction": 0.0,
+        "nonpositive_fraction": 1.0,
+        "median_lead_steps": -23.0
+      },
+      "lead_distribution": [
+        -23,
+        -24,
+        -24,
+        -23,
+        -23,
+        -22,
+        -22
+      ]
+    }
+  }
+}

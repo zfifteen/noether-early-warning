@@ -1,0 +1,16 @@
+suite_name,preset_name,detector_name,verdict,total_runs,comparable_runs,supportive_runs,falsifying_runs,censored_runs,positive_fraction,nonpositive_fraction,median_lead_steps
+main_paired_mlp,baseline,covariance_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp,baseline,mean_gradient_mismatch,SUPPORTED,8,3,3,0,5,1.0,0.0,77.0
+main_paired_mlp,baseline,activation_stat_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp,local_low,covariance_mismatch,SUPPORTED,8,1,1,0,7,1.0,0.0,106.0
+main_paired_mlp,local_low,mean_gradient_mismatch,SUPPORTED,8,5,5,0,3,1.0,0.0,83.0
+main_paired_mlp,local_low,activation_stat_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp,local_high,covariance_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp,local_high,mean_gradient_mismatch,SUPPORTED,8,3,3,0,5,1.0,0.0,70.0
+main_paired_mlp,local_high,activation_stat_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp,looser,covariance_mismatch,SUPPORTED,8,1,1,0,7,1.0,0.0,108.0
+main_paired_mlp,looser,mean_gradient_mismatch,SUPPORTED,8,5,5,0,3,1.0,0.0,85.0
+main_paired_mlp,looser,activation_stat_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp,stricter,covariance_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,
+main_paired_mlp,stricter,mean_gradient_mismatch,SUPPORTED,8,3,3,0,5,1.0,0.0,68.0
+main_paired_mlp,stricter,activation_stat_mismatch,INCONCLUSIVE,8,0,0,0,8,0.0,0.0,

@@ -1,0 +1,16 @@
+suite_name,preset_name,detector_name,verdict,total_runs,comparable_runs,supportive_runs,falsifying_runs,censored_runs,positive_fraction,nonpositive_fraction,median_lead_steps
+instant_break_control,baseline,covariance_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-20.0
+instant_break_control,baseline,mean_gradient_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-20.0
+instant_break_control,baseline,activation_stat_mismatch,FALSIFIED,8,5,0,5,3,0.0,1.0,-20.0
+instant_break_control,local_low,covariance_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-14.0
+instant_break_control,local_low,mean_gradient_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-14.0
+instant_break_control,local_low,activation_stat_mismatch,FALSIFIED,8,6,0,6,2,0.0,1.0,-14.0
+instant_break_control,local_high,covariance_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-26.0
+instant_break_control,local_high,mean_gradient_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-26.0
+instant_break_control,local_high,activation_stat_mismatch,FALSIFIED,8,5,0,5,3,0.0,1.0,-26.0
+instant_break_control,looser,covariance_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-12.0
+instant_break_control,looser,mean_gradient_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-12.0
+instant_break_control,looser,activation_stat_mismatch,FALSIFIED,8,6,0,6,2,0.0,1.0,-12.0
+instant_break_control,stricter,covariance_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-28.0
+instant_break_control,stricter,mean_gradient_mismatch,FALSIFIED,8,8,0,8,0,0.0,1.0,-28.0
+instant_break_control,stricter,activation_stat_mismatch,FALSIFIED,8,5,0,5,3,0.0,1.0,-28.0

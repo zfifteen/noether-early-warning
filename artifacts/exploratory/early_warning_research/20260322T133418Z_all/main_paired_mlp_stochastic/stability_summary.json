@@ -1,0 +1,297 @@
+{
+  "suite_name": "main_paired_mlp_stochastic",
+  "baseline_robust_verdict": "INCONCLUSIVE",
+  "robust_flip_count": 0,
+  "detector_flip_counts": {
+    "covariance_mismatch": 0,
+    "mean_gradient_mismatch": 0,
+    "activation_stat_mismatch": 0
+  },
+  "preset_summaries": {
+    "baseline": {
+      "robust_verdict": "INCONCLUSIVE",
+      "robust_details": {
+        "supported_detectors": [
+          "activation_stat_mismatch"
+        ],
+        "falsified_detectors": [],
+        "inconclusive_detectors": [
+          "covariance_mismatch",
+          "mean_gradient_mismatch"
+        ],
+        "supported_detector_count": 1,
+        "falsified_detector_count": 0,
+        "inconclusive_detector_count": 2
+      },
+      "detector_summaries": {
+        "covariance_mismatch": {
+          "verdict": "INCONCLUSIVE",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 0,
+            "supportive_runs": 0,
+            "falsifying_runs": 0,
+            "censored_runs": 8,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": null
+          }
+        },
+        "mean_gradient_mismatch": {
+          "verdict": "INCONCLUSIVE",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 0,
+            "supportive_runs": 0,
+            "falsifying_runs": 0,
+            "censored_runs": 8,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": null
+          }
+        },
+        "activation_stat_mismatch": {
+          "verdict": "SUPPORTED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 1,
+            "supportive_runs": 1,
+            "falsifying_runs": 0,
+            "censored_runs": 7,
+            "positive_fraction": 1.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": 53.0
+          }
+        }
+      }
+    },
+    "local_low": {
+      "robust_verdict": "INCONCLUSIVE",
+      "robust_details": {
+        "supported_detectors": [
+          "activation_stat_mismatch"
+        ],
+        "falsified_detectors": [],
+        "inconclusive_detectors": [
+          "covariance_mismatch",
+          "mean_gradient_mismatch"
+        ],
+        "supported_detector_count": 1,
+        "falsified_detector_count": 0,
+        "inconclusive_detector_count": 2
+      },
+      "detector_summaries": {
+        "covariance_mismatch": {
+          "verdict": "INCONCLUSIVE",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 0,
+            "supportive_runs": 0,
+            "falsifying_runs": 0,
+            "censored_runs": 8,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": null
+          }
+        },
+        "mean_gradient_mismatch": {
+          "verdict": "INCONCLUSIVE",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 0,
+            "supportive_runs": 0,
+            "falsifying_runs": 0,
+            "censored_runs": 8,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": null
+          }
+        },
+        "activation_stat_mismatch": {
+          "verdict": "SUPPORTED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 1,
+            "supportive_runs": 1,
+            "falsifying_runs": 0,
+            "censored_runs": 7,
+            "positive_fraction": 1.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": 45.0
+          }
+        }
+      }
+    },
+    "local_high": {
+      "robust_verdict": "INCONCLUSIVE",
+      "robust_details": {
+        "supported_detectors": [
+          "activation_stat_mismatch"
+        ],
+        "falsified_detectors": [],
+        "inconclusive_detectors": [
+          "covariance_mismatch",
+          "mean_gradient_mismatch"
+        ],
+        "supported_detector_count": 1,
+        "falsified_detector_count": 0,
+        "inconclusive_detector_count": 2
+      },
+      "detector_summaries": {
+        "covariance_mismatch": {
+          "verdict": "INCONCLUSIVE",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 0,
+            "supportive_runs": 0,
+            "falsifying_runs": 0,
+            "censored_runs": 8,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": null
+          }
+        },
+        "mean_gradient_mismatch": {
+          "verdict": "INCONCLUSIVE",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 0,
+            "supportive_runs": 0,
+            "falsifying_runs": 0,
+            "censored_runs": 8,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": null
+          }
+        },
+        "activation_stat_mismatch": {
+          "verdict": "SUPPORTED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 1,
+            "supportive_runs": 1,
+            "falsifying_runs": 0,
+            "censored_runs": 7,
+            "positive_fraction": 1.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": 45.0
+          }
+        }
+      }
+    },
+    "looser": {
+      "robust_verdict": "INCONCLUSIVE",
+      "robust_details": {
+        "supported_detectors": [
+          "activation_stat_mismatch"
+        ],
+        "falsified_detectors": [],
+        "inconclusive_detectors": [
+          "covariance_mismatch",
+          "mean_gradient_mismatch"
+        ],
+        "supported_detector_count": 1,
+        "falsified_detector_count": 0,
+        "inconclusive_detector_count": 2
+      },
+      "detector_summaries": {
+        "covariance_mismatch": {
+          "verdict": "INCONCLUSIVE",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 0,
+            "supportive_runs": 0,
+            "falsifying_runs": 0,
+            "censored_runs": 8,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": null
+          }
+        },
+        "mean_gradient_mismatch": {
+          "verdict": "INCONCLUSIVE",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 0,
+            "supportive_runs": 0,
+            "falsifying_runs": 0,
+            "censored_runs": 8,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": null
+          }
+        },
+        "activation_stat_mismatch": {
+          "verdict": "SUPPORTED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 1,
+            "supportive_runs": 1,
+            "falsifying_runs": 0,
+            "censored_runs": 7,
+            "positive_fraction": 1.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": 47.0
+          }
+        }
+      }
+    },
+    "stricter": {
+      "robust_verdict": "INCONCLUSIVE",
+      "robust_details": {
+        "supported_detectors": [
+          "activation_stat_mismatch"
+        ],
+        "falsified_detectors": [],
+        "inconclusive_detectors": [
+          "covariance_mismatch",
+          "mean_gradient_mismatch"
+        ],
+        "supported_detector_count": 1,
+        "falsified_detector_count": 0,
+        "inconclusive_detector_count": 2
+      },
+      "detector_summaries": {
+        "covariance_mismatch": {
+          "verdict": "INCONCLUSIVE",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 0,
+            "supportive_runs": 0,
+            "falsifying_runs": 0,
+            "censored_runs": 8,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": null
+          }
+        },
+        "mean_gradient_mismatch": {
+          "verdict": "INCONCLUSIVE",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 0,
+            "supportive_runs": 0,
+            "falsifying_runs": 0,
+            "censored_runs": 8,
+            "positive_fraction": 0.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": null
+          }
+        },
+        "activation_stat_mismatch": {
+          "verdict": "SUPPORTED",
+          "verdict_stats": {
+            "total_runs": 8,
+            "comparable_runs": 1,
+            "supportive_runs": 1,
+            "falsifying_runs": 0,
+            "censored_runs": 7,
+            "positive_fraction": 1.0,
+            "nonpositive_fraction": 0.0,
+            "median_lead_steps": 43.0
+          }
+        }
+      }
+    }
+  }
+}

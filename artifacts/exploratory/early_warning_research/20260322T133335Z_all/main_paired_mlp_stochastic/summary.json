@@ -1,0 +1,840 @@
+{
+  "suite_name": "main_paired_mlp_stochastic",
+  "description": "Paired MLP with minibatch SGD and a deeper paired architecture for robustness testing.",
+  "verdict": "INCONCLUSIVE",
+  "timestamp_utc": "2026-03-22T13:33:46.996384+00:00",
+  "parameters": {
+    "name": "main_paired_mlp_stochastic",
+    "description": "Paired MLP with minibatch SGD and a deeper paired architecture for robustness testing.",
+    "kind": "paired_mlp",
+    "training": {
+      "total_steps": 240,
+      "train_size": 192,
+      "probe_size": 160,
+      "batch_size": 48
+    },
+    "sweep": {
+      "seeds": [
+        0,
+        1
+      ],
+      "learning_rates": [
+        0.01,
+        0.02
+      ],
+      "input_scales": [
+        0.75,
+        1.25
+      ]
+    },
+    "probe": {
+      "every_steps": 15,
+      "microbatches": 10,
+      "microbatch_size": 16
+    },
+    "detector": {
+      "drift_window": 36,
+      "drift_running_mean_window": 8,
+      "drift_effect_floor": 0.05,
+      "drift_p_threshold": 1e-06,
+      "drift_consecutive": 2,
+      "symmetry_baseline_probes": 2,
+      "symmetry_z_threshold": 2.5,
+      "symmetry_floor": 0.015,
+      "symmetry_consecutive": 2
+    },
+    "model": {
+      "input_dim": 10,
+      "pair_count": 3,
+      "init_noise": 0.0015,
+      "teacher_hidden": 4,
+      "hidden_layers": 2,
+      "use_layer_norm": true
+    }
+  },
+  "seed_list": [
+    0,
+    1
+  ],
+  "detector_thresholds": {
+    "drift_window": 36,
+    "drift_running_mean_window": 8,
+    "drift_effect_floor": 0.05,
+    "drift_p_threshold": 1e-06,
+    "drift_consecutive": 2,
+    "symmetry_baseline_probes": 2,
+    "symmetry_z_threshold": 2.5,
+    "symmetry_floor": 0.015,
+    "symmetry_consecutive": 2
+  },
+  "libraries": {
+    "python": "3.13.0",
+    "numpy": "2.3.5",
+    "scipy": "1.16.3",
+    "torch": "2.10.0",
+    "matplotlib": "3.10.8"
+  },
+  "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133335Z_all/main_paired_mlp_stochastic",
+  "representative_run_id": "seed0_lr0.0100_scale0.75",
+  "primary_detector": "covariance_mismatch",
+  "primary_detector_verdict": "INCONCLUSIVE",
+  "primary_detector_verdict_stats": {
+    "total_runs": 8,
+    "comparable_runs": 0,
+    "supportive_runs": 0,
+    "falsifying_runs": 0,
+    "censored_runs": 8,
+    "positive_fraction": 0.0,
+    "nonpositive_fraction": 0.0,
+    "median_lead_steps": null
+  },
+  "detector_summaries": {
+    "covariance_mismatch": {
+      "detector_name": "covariance_mismatch",
+      "verdict": "INCONCLUSIVE",
+      "verdict_stats": {
+        "total_runs": 8,
+        "comparable_runs": 0,
+        "supportive_runs": 0,
+        "falsifying_runs": 0,
+        "censored_runs": 8,
+        "positive_fraction": 0.0,
+        "nonpositive_fraction": 0.0,
+        "median_lead_steps": null
+      },
+      "lead_distribution": []
+    },
+    "mean_gradient_mismatch": {
+      "detector_name": "mean_gradient_mismatch",
+      "verdict": "INCONCLUSIVE",
+      "verdict_stats": {
+        "total_runs": 8,
+        "comparable_runs": 0,
+        "supportive_runs": 0,
+        "falsifying_runs": 0,
+        "censored_runs": 8,
+        "positive_fraction": 0.0,
+        "nonpositive_fraction": 0.0,
+        "median_lead_steps": null
+      },
+      "lead_distribution": []
+    },
+    "activation_stat_mismatch": {
+      "detector_name": "activation_stat_mismatch",
+      "verdict": "SUPPORTED",
+      "verdict_stats": {
+        "total_runs": 8,
+        "comparable_runs": 1,
+        "supportive_runs": 1,
+        "falsifying_runs": 0,
+        "censored_runs": 7,
+        "positive_fraction": 1.0,
+        "nonpositive_fraction": 0.0,
+        "median_lead_steps": 53.0
+      },
+      "lead_distribution": [
+        53
+      ]
+    }
+  },
+  "robustness_details": {
+    "supported_detectors": [
+      "activation_stat_mismatch"
+    ],
+    "falsified_detectors": [],
+    "inconclusive_detectors": [
+      "covariance_mismatch",
+      "mean_gradient_mismatch"
+    ],
+    "supported_detector_count": 1,
+    "falsified_detector_count": 0,
+    "inconclusive_detector_count": 2
+  },
+  "stability_summary": {
+    "suite_name": "main_paired_mlp_stochastic",
+    "baseline_robust_verdict": "INCONCLUSIVE",
+    "robust_flip_count": 0,
+    "detector_flip_counts": {
+      "covariance_mismatch": 0,
+      "mean_gradient_mismatch": 0,
+      "activation_stat_mismatch": 0
+    },
+    "preset_summaries": {
+      "baseline": {
+        "robust_verdict": "INCONCLUSIVE",
+        "robust_details": {
+          "supported_detectors": [
+            "activation_stat_mismatch"
+          ],
+          "falsified_detectors": [],
+          "inconclusive_detectors": [
+            "covariance_mismatch",
+            "mean_gradient_mismatch"
+          ],
+          "supported_detector_count": 1,
+          "falsified_detector_count": 0,
+          "inconclusive_detector_count": 2
+        },
+        "detector_summaries": {
+          "covariance_mismatch": {
+            "verdict": "INCONCLUSIVE",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 0,
+              "supportive_runs": 0,
+              "falsifying_runs": 0,
+              "censored_runs": 8,
+              "positive_fraction": 0.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": null
+            }
+          },
+          "mean_gradient_mismatch": {
+            "verdict": "INCONCLUSIVE",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 0,
+              "supportive_runs": 0,
+              "falsifying_runs": 0,
+              "censored_runs": 8,
+              "positive_fraction": 0.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": null
+            }
+          },
+          "activation_stat_mismatch": {
+            "verdict": "SUPPORTED",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 1,
+              "supportive_runs": 1,
+              "falsifying_runs": 0,
+              "censored_runs": 7,
+              "positive_fraction": 1.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": 53.0
+            }
+          }
+        }
+      },
+      "local_low": {
+        "robust_verdict": "INCONCLUSIVE",
+        "robust_details": {
+          "supported_detectors": [
+            "activation_stat_mismatch"
+          ],
+          "falsified_detectors": [],
+          "inconclusive_detectors": [
+            "covariance_mismatch",
+            "mean_gradient_mismatch"
+          ],
+          "supported_detector_count": 1,
+          "falsified_detector_count": 0,
+          "inconclusive_detector_count": 2
+        },
+        "detector_summaries": {
+          "covariance_mismatch": {
+            "verdict": "INCONCLUSIVE",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 0,
+              "supportive_runs": 0,
+              "falsifying_runs": 0,
+              "censored_runs": 8,
+              "positive_fraction": 0.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": null
+            }
+          },
+          "mean_gradient_mismatch": {
+            "verdict": "INCONCLUSIVE",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 0,
+              "supportive_runs": 0,
+              "falsifying_runs": 0,
+              "censored_runs": 8,
+              "positive_fraction": 0.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": null
+            }
+          },
+          "activation_stat_mismatch": {
+            "verdict": "SUPPORTED",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 1,
+              "supportive_runs": 1,
+              "falsifying_runs": 0,
+              "censored_runs": 7,
+              "positive_fraction": 1.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": 45.0
+            }
+          }
+        }
+      },
+      "local_high": {
+        "robust_verdict": "INCONCLUSIVE",
+        "robust_details": {
+          "supported_detectors": [
+            "activation_stat_mismatch"
+          ],
+          "falsified_detectors": [],
+          "inconclusive_detectors": [
+            "covariance_mismatch",
+            "mean_gradient_mismatch"
+          ],
+          "supported_detector_count": 1,
+          "falsified_detector_count": 0,
+          "inconclusive_detector_count": 2
+        },
+        "detector_summaries": {
+          "covariance_mismatch": {
+            "verdict": "INCONCLUSIVE",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 0,
+              "supportive_runs": 0,
+              "falsifying_runs": 0,
+              "censored_runs": 8,
+              "positive_fraction": 0.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": null
+            }
+          },
+          "mean_gradient_mismatch": {
+            "verdict": "INCONCLUSIVE",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 0,
+              "supportive_runs": 0,
+              "falsifying_runs": 0,
+              "censored_runs": 8,
+              "positive_fraction": 0.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": null
+            }
+          },
+          "activation_stat_mismatch": {
+            "verdict": "SUPPORTED",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 1,
+              "supportive_runs": 1,
+              "falsifying_runs": 0,
+              "censored_runs": 7,
+              "positive_fraction": 1.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": 45.0
+            }
+          }
+        }
+      },
+      "looser": {
+        "robust_verdict": "INCONCLUSIVE",
+        "robust_details": {
+          "supported_detectors": [
+            "activation_stat_mismatch"
+          ],
+          "falsified_detectors": [],
+          "inconclusive_detectors": [
+            "covariance_mismatch",
+            "mean_gradient_mismatch"
+          ],
+          "supported_detector_count": 1,
+          "falsified_detector_count": 0,
+          "inconclusive_detector_count": 2
+        },
+        "detector_summaries": {
+          "covariance_mismatch": {
+            "verdict": "INCONCLUSIVE",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 0,
+              "supportive_runs": 0,
+              "falsifying_runs": 0,
+              "censored_runs": 8,
+              "positive_fraction": 0.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": null
+            }
+          },
+          "mean_gradient_mismatch": {
+            "verdict": "INCONCLUSIVE",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 0,
+              "supportive_runs": 0,
+              "falsifying_runs": 0,
+              "censored_runs": 8,
+              "positive_fraction": 0.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": null
+            }
+          },
+          "activation_stat_mismatch": {
+            "verdict": "SUPPORTED",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 1,
+              "supportive_runs": 1,
+              "falsifying_runs": 0,
+              "censored_runs": 7,
+              "positive_fraction": 1.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": 47.0
+            }
+          }
+        }
+      },
+      "stricter": {
+        "robust_verdict": "INCONCLUSIVE",
+        "robust_details": {
+          "supported_detectors": [
+            "activation_stat_mismatch"
+          ],
+          "falsified_detectors": [],
+          "inconclusive_detectors": [
+            "covariance_mismatch",
+            "mean_gradient_mismatch"
+          ],
+          "supported_detector_count": 1,
+          "falsified_detector_count": 0,
+          "inconclusive_detector_count": 2
+        },
+        "detector_summaries": {
+          "covariance_mismatch": {
+            "verdict": "INCONCLUSIVE",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 0,
+              "supportive_runs": 0,
+              "falsifying_runs": 0,
+              "censored_runs": 8,
+              "positive_fraction": 0.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": null
+            }
+          },
+          "mean_gradient_mismatch": {
+            "verdict": "INCONCLUSIVE",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 0,
+              "supportive_runs": 0,
+              "falsifying_runs": 0,
+              "censored_runs": 8,
+              "positive_fraction": 0.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": null
+            }
+          },
+          "activation_stat_mismatch": {
+            "verdict": "SUPPORTED",
+            "verdict_stats": {
+              "total_runs": 8,
+              "comparable_runs": 1,
+              "supportive_runs": 1,
+              "falsifying_runs": 0,
+              "censored_runs": 7,
+              "positive_fraction": 1.0,
+              "nonpositive_fraction": 0.0,
+              "median_lead_steps": 43.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "artifact_files": {
+    "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133335Z_all/main_paired_mlp_stochastic/summary.json",
+    "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133335Z_all/main_paired_mlp_stochastic/runs.csv",
+    "step_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133335Z_all/main_paired_mlp_stochastic/step_metrics.csv",
+    "probe_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133335Z_all/main_paired_mlp_stochastic/probe_metrics.csv",
+    "detector_summary_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133335Z_all/main_paired_mlp_stochastic/detector_summary.csv",
+    "detector_summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133335Z_all/main_paired_mlp_stochastic/detector_summary.json",
+    "stability_table_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133335Z_all/main_paired_mlp_stochastic/stability_table.csv",
+    "stability_summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133335Z_all/main_paired_mlp_stochastic/stability_summary.json",
+    "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133335Z_all/main_paired_mlp_stochastic/figures/representative_timeseries.png",
+    "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133335Z_all/main_paired_mlp_stochastic/figures/onset_ordering.png"
+  },
+  "run_summaries": [
+    {
+      "suite_name": "main_paired_mlp_stochastic",
+      "run_id": "seed0_lr0.0100_scale0.75",
+      "model_kind": "paired_mlp",
+      "seed": 0,
+      "learning_rate": 0.01,
+      "input_scale": 0.75,
+      "total_steps": 240,
+      "drift_onset_step": 38,
+      "symmetry_onset_step": null,
+      "lead_steps": null,
+      "comparable": false,
+      "censored_symmetry": true,
+      "drift_detected": true,
+      "symmetry_detected": false,
+      "verdict_label": "censored",
+      "final_loss": 0.07232462432881241,
+      "early_curvature": 21.158471112944788,
+      "max_update_norm": 0.017671118631525845,
+      "max_symmetry_score": 0.0041792966517873,
+      "consensus_symmetry_onset_step": null,
+      "consensus_supportive_detectors": 0,
+      "consensus_falsifying_detectors": 0,
+      "consensus_censored_detectors": 3,
+      "consensus_verdict": "censored",
+      "symmetry_onset_step_activation_stat_mismatch": null,
+      "lead_steps_activation_stat_mismatch": null,
+      "comparable_activation_stat_mismatch": false,
+      "censored_symmetry_activation_stat_mismatch": true,
+      "symmetry_detected_activation_stat_mismatch": false,
+      "verdict_label_activation_stat_mismatch": "censored",
+      "max_symmetry_score_activation_stat_mismatch": 0.0005541196602436297,
+      "symmetry_onset_step_covariance_mismatch": null,
+      "lead_steps_covariance_mismatch": null,
+      "comparable_covariance_mismatch": false,
+      "censored_symmetry_covariance_mismatch": true,
+      "symmetry_detected_covariance_mismatch": false,
+      "verdict_label_covariance_mismatch": "censored",
+      "max_symmetry_score_covariance_mismatch": 0.0041792966517873,
+      "symmetry_onset_step_mean_gradient_mismatch": null,
+      "lead_steps_mean_gradient_mismatch": null,
+      "comparable_mean_gradient_mismatch": false,
+      "censored_symmetry_mean_gradient_mismatch": true,
+      "symmetry_detected_mean_gradient_mismatch": false,
+      "verdict_label_mean_gradient_mismatch": "censored",
+      "max_symmetry_score_mean_gradient_mismatch": 0.010846420238398581
+    },
+    {
+      "suite_name": "main_paired_mlp_stochastic",
+      "run_id": "seed0_lr0.0100_scale1.25",
+      "model_kind": "paired_mlp",
+      "seed": 0,
+      "learning_rate": 0.01,
+      "input_scale": 1.25,
+      "total_steps": 240,
+      "drift_onset_step": 39,
+      "symmetry_onset_step": null,
+      "lead_steps": null,
+      "comparable": false,
+      "censored_symmetry": true,
+      "drift_detected": true,
+      "symmetry_detected": false,
+      "verdict_label": "censored",
+      "final_loss": 0.10014326634578989,
+      "early_curvature": 31.21157766706571,
+      "max_update_norm": 0.03020901165656266,
+      "max_symmetry_score": 0.010010859928909105,
+      "consensus_symmetry_onset_step": null,
+      "consensus_supportive_detectors": 0,
+      "consensus_falsifying_detectors": 0,
+      "consensus_censored_detectors": 3,
+      "consensus_verdict": "censored",
+      "symmetry_onset_step_activation_stat_mismatch": null,
+      "lead_steps_activation_stat_mismatch": null,
+      "comparable_activation_stat_mismatch": false,
+      "censored_symmetry_activation_stat_mismatch": true,
+      "symmetry_detected_activation_stat_mismatch": false,
+      "verdict_label_activation_stat_mismatch": "censored",
+      "max_symmetry_score_activation_stat_mismatch": 0.0014856300728424067,
+      "symmetry_onset_step_covariance_mismatch": null,
+      "lead_steps_covariance_mismatch": null,
+      "comparable_covariance_mismatch": false,
+      "censored_symmetry_covariance_mismatch": true,
+      "symmetry_detected_covariance_mismatch": false,
+      "verdict_label_covariance_mismatch": "censored",
+      "max_symmetry_score_covariance_mismatch": 0.010010859928909105,
+      "symmetry_onset_step_mean_gradient_mismatch": null,
+      "lead_steps_mean_gradient_mismatch": null,
+      "comparable_mean_gradient_mismatch": false,
+      "censored_symmetry_mean_gradient_mismatch": true,
+      "symmetry_detected_mean_gradient_mismatch": false,
+      "verdict_label_mean_gradient_mismatch": "censored",
+      "max_symmetry_score_mean_gradient_mismatch": 0.02554353580773582
+    },
+    {
+      "suite_name": "main_paired_mlp_stochastic",
+      "run_id": "seed0_lr0.0200_scale0.75",
+      "model_kind": "paired_mlp",
+      "seed": 0,
+      "learning_rate": 0.02,
+      "input_scale": 0.75,
+      "total_steps": 240,
+      "drift_onset_step": 38,
+      "symmetry_onset_step": null,
+      "lead_steps": null,
+      "comparable": false,
+      "censored_symmetry": true,
+      "drift_detected": true,
+      "symmetry_detected": false,
+      "verdict_label": "censored",
+      "final_loss": 0.04533128909644105,
+      "early_curvature": 7.778948718490032,
+      "max_update_norm": 0.05313164062623362,
+      "max_symmetry_score": 0.0030759239577929907,
+      "consensus_symmetry_onset_step": null,
+      "consensus_supportive_detectors": 0,
+      "consensus_falsifying_detectors": 0,
+      "consensus_censored_detectors": 3,
+      "consensus_verdict": "censored",
+      "symmetry_onset_step_activation_stat_mismatch": null,
+      "lead_steps_activation_stat_mismatch": null,
+      "comparable_activation_stat_mismatch": false,
+      "censored_symmetry_activation_stat_mismatch": true,
+      "symmetry_detected_activation_stat_mismatch": false,
+      "verdict_label_activation_stat_mismatch": "censored",
+      "max_symmetry_score_activation_stat_mismatch": 0.0002898358798744847,
+      "symmetry_onset_step_covariance_mismatch": null,
+      "lead_steps_covariance_mismatch": null,
+      "comparable_covariance_mismatch": false,
+      "censored_symmetry_covariance_mismatch": true,
+      "symmetry_detected_covariance_mismatch": false,
+      "verdict_label_covariance_mismatch": "censored",
+      "max_symmetry_score_covariance_mismatch": 0.0030759239577929907,
+      "symmetry_onset_step_mean_gradient_mismatch": null,
+      "lead_steps_mean_gradient_mismatch": null,
+      "comparable_mean_gradient_mismatch": false,
+      "censored_symmetry_mean_gradient_mismatch": true,
+      "symmetry_detected_mean_gradient_mismatch": false,
+      "verdict_label_mean_gradient_mismatch": "censored",
+      "max_symmetry_score_mean_gradient_mismatch": 0.042991511507413364
+    },
+    {
+      "suite_name": "main_paired_mlp_stochastic",
+      "run_id": "seed0_lr0.0200_scale1.25",
+      "model_kind": "paired_mlp",
+      "seed": 0,
+      "learning_rate": 0.02,
+      "input_scale": 1.25,
+      "total_steps": 240,
+      "drift_onset_step": 39,
+      "symmetry_onset_step": null,
+      "lead_steps": null,
+      "comparable": false,
+      "censored_symmetry": true,
+      "drift_detected": true,
+      "symmetry_detected": false,
+      "verdict_label": "censored",
+      "final_loss": 0.10487776683281146,
+      "early_curvature": 33.78737929883464,
+      "max_update_norm": 0.030162591814663853,
+      "max_symmetry_score": 0.005430724930583434,
+      "consensus_symmetry_onset_step": null,
+      "consensus_supportive_detectors": 0,
+      "consensus_falsifying_detectors": 0,
+      "consensus_censored_detectors": 3,
+      "consensus_verdict": "censored",
+      "symmetry_onset_step_activation_stat_mismatch": null,
+      "lead_steps_activation_stat_mismatch": null,
+      "comparable_activation_stat_mismatch": false,
+      "censored_symmetry_activation_stat_mismatch": true,
+      "symmetry_detected_activation_stat_mismatch": false,
+      "verdict_label_activation_stat_mismatch": "censored",
+      "max_symmetry_score_activation_stat_mismatch": 0.003992776765802944,
+      "symmetry_onset_step_covariance_mismatch": null,
+      "lead_steps_covariance_mismatch": null,
+      "comparable_covariance_mismatch": false,
+      "censored_symmetry_covariance_mismatch": true,
+      "symmetry_detected_covariance_mismatch": false,
+      "verdict_label_covariance_mismatch": "censored",
+      "max_symmetry_score_covariance_mismatch": 0.005430724930583434,
+      "symmetry_onset_step_mean_gradient_mismatch": null,
+      "lead_steps_mean_gradient_mismatch": null,
+      "comparable_mean_gradient_mismatch": false,
+      "censored_symmetry_mean_gradient_mismatch": true,
+      "symmetry_detected_mean_gradient_mismatch": false,
+      "verdict_label_mean_gradient_mismatch": "censored",
+      "max_symmetry_score_mean_gradient_mismatch": 0.012529927322610561
+    },
+    {
+      "suite_name": "main_paired_mlp_stochastic",
+      "run_id": "seed1_lr0.0100_scale0.75",
+      "model_kind": "paired_mlp",
+      "seed": 1,
+      "learning_rate": 0.01,
+      "input_scale": 0.75,
+      "total_steps": 240,
+      "drift_onset_step": 38,
+      "symmetry_onset_step": null,
+      "lead_steps": null,
+      "comparable": false,
+      "censored_symmetry": true,
+      "drift_detected": true,
+      "symmetry_detected": false,
+      "verdict_label": "censored",
+      "final_loss": 0.04832578811061863,
+      "early_curvature": 65.09964636842997,
+      "max_update_norm": 0.027984995541110363,
+      "max_symmetry_score": 0.004966551349243688,
+      "consensus_symmetry_onset_step": null,
+      "consensus_supportive_detectors": 0,
+      "consensus_falsifying_detectors": 0,
+      "consensus_censored_detectors": 3,
+      "consensus_verdict": "censored",
+      "symmetry_onset_step_activation_stat_mismatch": null,
+      "lead_steps_activation_stat_mismatch": null,
+      "comparable_activation_stat_mismatch": false,
+      "censored_symmetry_activation_stat_mismatch": true,
+      "symmetry_detected_activation_stat_mismatch": false,
+      "verdict_label_activation_stat_mismatch": "censored",
+      "max_symmetry_score_activation_stat_mismatch": 0.0017685047247853313,
+      "symmetry_onset_step_covariance_mismatch": null,
+      "lead_steps_covariance_mismatch": null,
+      "comparable_covariance_mismatch": false,
+      "censored_symmetry_covariance_mismatch": true,
+      "symmetry_detected_covariance_mismatch": false,
+      "verdict_label_covariance_mismatch": "censored",
+      "max_symmetry_score_covariance_mismatch": 0.004966551349243688,
+      "symmetry_onset_step_mean_gradient_mismatch": null,
+      "lead_steps_mean_gradient_mismatch": null,
+      "comparable_mean_gradient_mismatch": false,
+      "censored_symmetry_mean_gradient_mismatch": true,
+      "symmetry_detected_mean_gradient_mismatch": false,
+      "verdict_label_mean_gradient_mismatch": "censored",
+      "max_symmetry_score_mean_gradient_mismatch": 0.0053891393132817315
+    },
+    {
+      "suite_name": "main_paired_mlp_stochastic",
+      "run_id": "seed1_lr0.0100_scale1.25",
+      "model_kind": "paired_mlp",
+      "seed": 1,
+      "learning_rate": 0.01,
+      "input_scale": 1.25,
+      "total_steps": 240,
+      "drift_onset_step": 38,
+      "symmetry_onset_step": null,
+      "lead_steps": null,
+      "comparable": false,
+      "censored_symmetry": true,
+      "drift_detected": true,
+      "symmetry_detected": false,
+      "verdict_label": "censored",
+      "final_loss": 0.03734372122486329,
+      "early_curvature": 24.903916503136642,
+      "max_update_norm": 0.02036396267414852,
+      "max_symmetry_score": 0.004271625326938235,
+      "consensus_symmetry_onset_step": null,
+      "consensus_supportive_detectors": 0,
+      "consensus_falsifying_detectors": 0,
+      "consensus_censored_detectors": 3,
+      "consensus_verdict": "censored",
+      "symmetry_onset_step_activation_stat_mismatch": null,
+      "lead_steps_activation_stat_mismatch": null,
+      "comparable_activation_stat_mismatch": false,
+      "censored_symmetry_activation_stat_mismatch": true,
+      "symmetry_detected_activation_stat_mismatch": false,
+      "verdict_label_activation_stat_mismatch": "censored",
+      "max_symmetry_score_activation_stat_mismatch": 0.0040449011940798625,
+      "symmetry_onset_step_covariance_mismatch": null,
+      "lead_steps_covariance_mismatch": null,
+      "comparable_covariance_mismatch": false,
+      "censored_symmetry_covariance_mismatch": true,
+      "symmetry_detected_covariance_mismatch": false,
+      "verdict_label_covariance_mismatch": "censored",
+      "max_symmetry_score_covariance_mismatch": 0.004271625326938235,
+      "symmetry_onset_step_mean_gradient_mismatch": null,
+      "lead_steps_mean_gradient_mismatch": null,
+      "comparable_mean_gradient_mismatch": false,
+      "censored_symmetry_mean_gradient_mismatch": true,
+      "symmetry_detected_mean_gradient_mismatch": false,
+      "verdict_label_mean_gradient_mismatch": "censored",
+      "max_symmetry_score_mean_gradient_mismatch": 0.003990646170430643
+    },
+    {
+      "suite_name": "main_paired_mlp_stochastic",
+      "run_id": "seed1_lr0.0200_scale0.75",
+      "model_kind": "paired_mlp",
+      "seed": 1,
+      "learning_rate": 0.02,
+      "input_scale": 0.75,
+      "total_steps": 240,
+      "drift_onset_step": 37,
+      "symmetry_onset_step": null,
+      "lead_steps": null,
+      "comparable": false,
+      "censored_symmetry": true,
+      "drift_detected": true,
+      "symmetry_detected": false,
+      "verdict_label": "censored",
+      "final_loss": 0.028502824457874065,
+      "early_curvature": 9.907946117859876,
+      "max_update_norm": 0.051540784666138796,
+      "max_symmetry_score": 0.003497083747587615,
+      "consensus_symmetry_onset_step": null,
+      "consensus_supportive_detectors": 1,
+      "consensus_falsifying_detectors": 0,
+      "consensus_censored_detectors": 2,
+      "consensus_verdict": "censored",
+      "symmetry_onset_step_activation_stat_mismatch": 90,
+      "lead_steps_activation_stat_mismatch": 53,
+      "comparable_activation_stat_mismatch": true,
+      "censored_symmetry_activation_stat_mismatch": false,
+      "symmetry_detected_activation_stat_mismatch": true,
+      "verdict_label_activation_stat_mismatch": "supportive",
+      "max_symmetry_score_activation_stat_mismatch": 0.16712547522237178,
+      "symmetry_onset_step_covariance_mismatch": null,
+      "lead_steps_covariance_mismatch": null,
+      "comparable_covariance_mismatch": false,
+      "censored_symmetry_covariance_mismatch": true,
+      "symmetry_detected_covariance_mismatch": false,
+      "verdict_label_covariance_mismatch": "censored",
+      "max_symmetry_score_covariance_mismatch": 0.003497083747587615,
+      "symmetry_onset_step_mean_gradient_mismatch": null,
+      "lead_steps_mean_gradient_mismatch": null,
+      "comparable_mean_gradient_mismatch": false,
+      "censored_symmetry_mean_gradient_mismatch": true,
+      "symmetry_detected_mean_gradient_mismatch": false,
+      "verdict_label_mean_gradient_mismatch": "censored",
+      "max_symmetry_score_mean_gradient_mismatch": 0.006553803739923459
+    },
+    {
+      "suite_name": "main_paired_mlp_stochastic",
+      "run_id": "seed1_lr0.0200_scale1.25",
+      "model_kind": "paired_mlp",
+      "seed": 1,
+      "learning_rate": 0.02,
+      "input_scale": 1.25,
+      "total_steps": 240,
+      "drift_onset_step": 37,
+      "symmetry_onset_step": null,
+      "lead_steps": null,
+      "comparable": false,
+      "censored_symmetry": true,
+      "drift_detected": true,
+      "symmetry_detected": false,
+      "verdict_label": "censored",
+      "final_loss": 0.07178917357205071,
+      "early_curvature": 57.978139256369374,
+      "max_update_norm": 0.15911907216145052,
+      "max_symmetry_score": 0.0036178400441404745,
+      "consensus_symmetry_onset_step": null,
+      "consensus_supportive_detectors": 0,
+      "consensus_falsifying_detectors": 0,
+      "consensus_censored_detectors": 3,
+      "consensus_verdict": "censored",
+      "symmetry_onset_step_activation_stat_mismatch": null,
+      "lead_steps_activation_stat_mismatch": null,
+      "comparable_activation_stat_mismatch": false,
+      "censored_symmetry_activation_stat_mismatch": true,
+      "symmetry_detected_activation_stat_mismatch": false,
+      "verdict_label_activation_stat_mismatch": "censored",
+      "max_symmetry_score_activation_stat_mismatch": 0.00137971481079068,
+      "symmetry_onset_step_covariance_mismatch": null,
+      "lead_steps_covariance_mismatch": null,
+      "comparable_covariance_mismatch": false,
+      "censored_symmetry_covariance_mismatch": true,
+      "symmetry_detected_covariance_mismatch": false,
+      "verdict_label_covariance_mismatch": "censored",
+      "max_symmetry_score_covariance_mismatch": 0.0036178400441404745,
+      "symmetry_onset_step_mean_gradient_mismatch": null,
+      "lead_steps_mean_gradient_mismatch": null,
+      "comparable_mean_gradient_mismatch": false,
+      "censored_symmetry_mean_gradient_mismatch": true,
+      "symmetry_detected_mean_gradient_mismatch": false,
+      "verdict_label_mean_gradient_mismatch": "censored",
+      "max_symmetry_score_mean_gradient_mismatch": 0.005311604955152531
+    }
+  ]
+}
