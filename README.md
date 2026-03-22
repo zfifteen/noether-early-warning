@@ -1,19 +1,15 @@
 # Noether Early Warning
 
-This repository is the canonical confirmation benchmark for the early-warning claim: update-norm drift may become detectable before direct symmetry detection in paired neural-network training.
+This repository is centered on Benchmark 1 for the core early-warning claim:
 
-The current frozen benchmark is the only canonical evidence path. It does not yet confirm the claim at the benchmark level, because one detector in the full-batch instant-break control fails the benchmark's control gate. The benchmark still shows strong positive evidence in multiple suites and localizes the current weakness to one direct detector.
+update-norm drift becomes detectable before direct symmetry detection.
 
-The canonical documents are:
+Benchmark 1 is intentionally narrow. It runs only the claim-bearing paired-MLP suite, uses only `covariance_mismatch` as the direct symmetry detector, and executes every run to a fixed uncensored horizon.
 
-- [`docs/core_claim.md`](docs/core_claim.md)
-- [`docs/benchmark_design.md`](docs/benchmark_design.md)
-- [`docs/benchmark_results.md`](docs/benchmark_results.md)
-
-Run the benchmark from the repository root:
+Run it from the repository root:
 
 ```bash
-python -m early_warning_research.run --benchmark canonical
+python -m early_warning_research.run --benchmark benchmark1
 pytest -q early_warning_research/tests
 ```
 
@@ -23,6 +19,6 @@ Install dependencies from the repository root:
 pip install -r requirements.txt
 ```
 
-Canonical benchmark outputs are written under `artifacts/canonical_benchmark/` by default.
+Benchmark 1 artifacts are written under `artifacts/benchmark1/` by default.
 
-Exploratory runs, follow-up analyses, and historical bundles are preserved as discovery material. See [`docs/archive_map.md`](docs/archive_map.md) and [`archive/`](archive) for that material.
+Historical materials remain under [`archive/`](archive) and [`docs/archive_map.md`](docs/archive_map.md), but they are not part of Benchmark 1.

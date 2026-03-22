@@ -1,20 +1,13 @@
-This package is the canonical runnable confirmation benchmark for the core early-warning claim only.
+This package exposes Benchmark 1 for the core early-warning claim only.
 
-It is designed to answer one question cleanly: under a fixed benchmark matrix, fixed detector set, and fixed long-window resolution policy, does update-norm drift become detectable before direct symmetry detection, and do the controls and true negatives behave as they should.
+Benchmark 1 asks one question:
 
-The public interface is intentionally small:
+can drift become detectable before direct symmetry detection?
 
-`python -m early_warning_research.run --benchmark canonical`
+The public interface is:
 
-Module layout:
+`python -m early_warning_research.run --benchmark benchmark1`
 
-- `run.py`: CLI entrypoint
-- `benchmark.py`: canonical benchmark matrix, scoring, and artifact writing
-- `suites.py`: reusable suite definitions used by the benchmark
-- `models.py`: paired MLP and toy models
-- `detectors.py`: drift and symmetry onset detectors
-- `experiments.py`: low-level run execution and metric collection
-- `plotting.py`: benchmark figures
-- `tests/`: detector and benchmark coverage
+Benchmark 1 runs only the claim-bearing paired-MLP suite, uses only `covariance_mismatch` as the direct symmetry detector, and executes all runs to a fixed uncensored horizon of `9600` steps.
 
-Artifacts are written to `artifacts/canonical_benchmark/` at the repository root by default. Human-facing narrative documents live under `docs/`, and exploratory follow-ups live under `archive/notes/` plus `artifacts/exploratory/`.
+Artifacts are written to `artifacts/benchmark1/` at the repository root by default. Human-facing narrative documents live under `docs/`.

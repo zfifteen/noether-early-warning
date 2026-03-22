@@ -2,12 +2,12 @@ from __future__ import annotations
 
 import argparse
 
-from .benchmark import run_canonical_benchmark
+from .benchmark import run_benchmark1
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Run the canonical early-warning confirmation benchmark.")
-    parser.add_argument("--benchmark", choices=["canonical"], required=True)
+    parser = argparse.ArgumentParser(description="Run Benchmark 1 for the core early-warning claim.")
+    parser.add_argument("--benchmark", choices=["benchmark1"], required=True)
     parser.add_argument("--output-dir", default=None, help="Override the default artifact root.")
     parser.add_argument("--smoke", action="store_true", help="Use the reduced smoke-test configuration.")
     parser.add_argument("--quiet", action="store_true", help="Suppress per-run progress logs.")
@@ -17,17 +17,18 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
-    summary = run_canonical_benchmark(output_root=args.output_dir, smoke=args.smoke, quiet=args.quiet)
+    summary = run_benchmark1(output_root=args.output_dir, smoke=args.smoke, quiet=args.quiet)
 
     print(f"Artifacts: {summary['output_dir']}")
-    print(f"Benchmark verdict: {summary['benchmark_verdict']}")
-    print(f"Recommended stochastic detector: {summary['recommended_stochastic_direct_detector']}")
-    for row in summary["suite_scorecards"]:
-        print(
-            f"{row['suite_name']}: "
-            f"{'PASS' if row['suite_passed'] else 'FAIL'} "
-            f"({row['summary']})"
-        )
+    print(f"Benchmark 1 verdict: {summary['benchmark1_verdict']}")
+    stats = summary["verdict_stats"]
+    print(
+        "Runs: "
+        f"total={stats['total_runs']} "
+        f"comparable={stats['comparable_runs']} "
+        f"supportive={stats['supportive_runs']} "
+        f"median_lead={stats['median_lead_steps']}"
+    )
 
 
 if __name__ == "__main__":
