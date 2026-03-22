@@ -4,7 +4,5 @@
 __pycache__/
 .pytest_cache/
 .benchmarks/
-#artifacts/*
-#!artifacts/.gitkeep
-#!artifacts/early_warning_research/20260322T123337Z_all
-#!artifacts/early_warning_research/20260322T130542Z_all
+artifacts/*
+!artifacts/.gitkeep
