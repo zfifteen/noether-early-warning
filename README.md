@@ -30,18 +30,16 @@ The strongest high-level findings are:
 - Under a fixed 300-step observation budget, drift was detected in all runs while direct symmetry was detected in only two thirds.
 - At the exact drift alarm time, direct symmetry was still sub-threshold in 24 of 27 runs.
 
-## Top-Level Plot
+## At a Glance
 
-This suite-level figure summarizes the final verdicts. All four benchmark categories are green and supported.
+The core evidence is easiest to read as a compact benchmark table:
 
-![B1-B4 suite verdicts](./docs/findings_assets/suite_verdicts.png)
-
-What this plot means:
-
-- `B1` establishes the early ordering.
-- `B2` shows the effect is regime-specific rather than generic.
-- `B3` shows the effect matters under practical monitoring limits.
-- `B4` shows the alarm is useful at the exact moment it fires.
+| Benchmark | What it establishes | Result |
+|---|---|---|
+| `B1` | Drift leads in gradual regimes | `27/27` runs, median lead `+84` steps |
+| `B2` | The effect is not generic | `27/27` runs, median lead `-37` steps |
+| `B3` | Drift matters under finite monitoring limits | Drift `27/27` vs symmetry `18/27` within `300` steps |
+| `B4` | Drift is useful at the exact alarm moment | `24/27` runs still sub-threshold at alarm |
 
 ## Hypothesis
 
