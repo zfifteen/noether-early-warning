@@ -1,3 +1,5 @@
+![Noether Early Warning banner](./assets/repo_banner.png)
+
 # Noether Early Warning
 
 ## Hypothesis
