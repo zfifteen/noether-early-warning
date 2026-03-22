@@ -2,17 +2,58 @@
 
 # Noether Early Warning
 
+A benchmark suite for earlier practical detection of gradual symmetry breaking.
+
+## What This Repo Gives You
+
+If you monitor a system for gradual breakage, waiting for the direct symmetry metric can be too late.
+
+This repository benchmarks when a drift-based alarm is practically more useful than a direct symmetry metric for catching gradual symmetry breaking early. It does not just ask whether one signal can appear before another in hindsight. It tests whether that advantage is real, regime-specific, visible under finite monitoring budgets, and still present at the exact moment the drift alarm fires.
+
+That is what makes the result useful rather than merely interesting:
+
+- in gradual regimes, drift fires first
+- in instant-break controls, the ordering reverses
+- under finite observation limits, drift is easier to detect
+- at the alarm moment, the direct symmetry metric is usually still sub-threshold
+
+## Executive Summary
+
+The benchmark suite supports the full four-part claim package.
+
+Across the consolidated `B1`-`B4` suite, every benchmark returned `SUPPORTED`. In this repository’s benchmarked regime, the evidence supports the conclusion that drift is an earlier and practically useful warning signal for gradual symmetry breaking.
+
+The strongest high-level findings are:
+
+- In the gradual regime, drift fired before direct symmetry detection in every run.
+- In the instant-break control, the ordering reversed in every run.
+- Under a fixed 300-step observation budget, drift was detected in all runs while direct symmetry was detected in only two thirds.
+- At the exact drift alarm time, direct symmetry was still sub-threshold in 24 of 27 runs.
+
+## Top-Level Plot
+
+This suite-level figure summarizes the final verdicts. All four benchmark categories are green and supported.
+
+![B1-B4 suite verdicts](./docs/findings_assets/suite_verdicts.png)
+
+What this plot means:
+
+- `B1` establishes the early ordering.
+- `B2` shows the effect is regime-specific rather than generic.
+- `B3` shows the effect matters under practical monitoring limits.
+- `B4` shows the alarm is useful at the exact moment it fires.
+
 ## Hypothesis
 
-The working hypothesis of this repository is that, in gradual symmetry-breaking regimes, a drift observable can become detectable before a direct symmetry observable does.
+The working hypothesis of this repository is that, in gradual symmetry-breaking regimes, a drift observable can become detectable before a direct symmetry observable does, and that this earlier drift signal can be practically useful as an early warning.
 
 The intuition is that these two kinds of signal do not have to become visible on the same timescale. A direct symmetry observable may still sit below threshold while a drift observable linked to the same breakdown process is already showing a stable deviation in the time-series. If that happens consistently, then drift is not just correlated with breakdown. It becomes an early warning signal.
 
-The practical idea is stronger than “drift happens first somewhere in hindsight.” A useful early warning signal should satisfy several stricter conditions. It should appear before the direct symmetry signal in gradual regimes. That ordering should reverse in instant-break regimes rather than showing up everywhere indiscriminately. Under a finite observation budget, the drift signal should be easier to detect. And when the drift alarm fires, the direct symmetry observable should still usually remain below its own threshold.
+The practical version of the claim is stronger than “drift happens first somewhere in hindsight.” A useful early warning signal should satisfy several stricter conditions. It should appear before the direct symmetry signal in gradual regimes. That ordering should reverse in instant-break regimes rather than showing up everywhere indiscriminately. Under a finite observation budget, the drift signal should be easier to detect. And when the drift alarm fires, the direct symmetry observable should still usually remain below its own threshold.
 
 That is the theory story this repository tests. The benchmark program reduces it into four narrow empirical claims, benchmarks each one separately, and then recombines them into a single validated findings package.
 
-## What This Repo Contains
+## Why You Should Trust This Conclusion
 
 This repository benchmarks four atomic claims:
 
@@ -56,32 +97,6 @@ Artifacts are written under [artifacts/](/Users/velocityworks/IdeaProjects/noeth
 
 - [summary.json](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/summary.json)
 - [REPORT.md](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/REPORT.md)
-
-## Executive Summary
-
-The benchmark suite supports the full four-part claim package.
-
-Across the consolidated `B1`-`B4` suite, every benchmark returned `SUPPORTED`. In this repository’s benchmarked regime, the evidence supports the conclusion that drift is an earlier and practically useful warning signal for gradual symmetry breaking.
-
-The strongest high-level findings are:
-
-- In the gradual regime, drift fired before direct symmetry detection in every run.
-- In the instant-break control, the ordering reversed in every run.
-- Under a fixed 300-step observation budget, drift was detected in all runs while direct symmetry was detected in only two thirds.
-- At the exact drift alarm time, direct symmetry was still sub-threshold in 24 of 27 runs.
-
-## Top-Level Plot
-
-This suite-level figure summarizes the final verdicts. All four benchmark categories are green and supported.
-
-![B1-B4 suite verdicts](./docs/findings_assets/suite_verdicts.png)
-
-What this plot means:
-
-- `B1` shows the early-warning ordering itself.
-- `B2` shows that the ordering is regime-specific rather than generic.
-- `B3` shows the practical sensitivity advantage under finite observation budgets.
-- `B4` shows alarm-time separation: when drift first alarms, direct symmetry is usually still below threshold.
 
 ## Benchmark Summary
 
