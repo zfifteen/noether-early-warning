@@ -4,6 +4,8 @@ This repository is centered on Benchmark 1 for the core early-warning claim:
 
 update-norm drift becomes detectable before direct symmetry detection.
 
+The broader benchmark strategy is documented in [`TEST_PLAN.md`](TEST_PLAN.md). The claims being split into atomic benchmarks are documented in [`docs/core_claim.md`](docs/core_claim.md).
+
 Benchmark 1 is intentionally narrow. It runs only the claim-bearing paired-MLP suite, uses only `covariance_mismatch` as the direct symmetry detector, and executes every run to a fixed uncensored horizon.
 
 Run it from the repository root:
