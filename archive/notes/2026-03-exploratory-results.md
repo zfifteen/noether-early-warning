@@ -2,7 +2,9 @@
 
 ## Conclusion
 
-The core claim is supported by the current clean experiment package.
+This note reflects the earlier exploratory package, not the current canonical benchmark.
+
+At the time of this exploratory run, the core claim looked supported by the clean experiment package.
 
 In the main neural-network experiment, update-norm drift appeared before direct symmetry detection whenever both signals were actually measurable in the same run. The matched instant-break control behaved the opposite way: symmetry was detected first, then drift. That matters because it shows the package is not just biased toward declaring drift early in every case.
 
@@ -26,7 +28,7 @@ The run summarized here is:
 
 Artifacts for that run were written to:
 
-`artifacts/early_warning_research/20260322T123337Z_all/`
+`artifacts/exploratory/early_warning_research/20260322T123337Z_all/`
 
 Reference figures copied into this documentation set:
 

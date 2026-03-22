@@ -1,23 +1,19 @@
 # Noether Early Warning
 
-This repository is the clean research artifact for the narrow early-warning claim: in the current experiment package, update-norm drift becomes detectable before direct symmetry detection in the main neural-network suite, and that ordering fails in the matched symmetry-broken control.
+This repository is the canonical confirmation benchmark for the early-warning claim: update-norm drift may become detectable before direct symmetry detection in paired neural-network training.
 
-The canonical experiment package is [`early_warning_research/`](early_warning_research). It contains the runnable code, tests, and suite definitions for the current claim-bearing experiments.
+The current frozen benchmark is the only canonical evidence path. It does not yet confirm the claim at the benchmark level, because one detector in the full-batch instant-break control fails the benchmark's control gate. The benchmark still shows strong positive evidence in multiple suites and localizes the current weakness to one direct detector.
 
-The canonical human-readable entrypoints are:
+The canonical documents are:
 
 - [`docs/core_claim.md`](docs/core_claim.md)
-- [`docs/results.md`](docs/results.md)
-- [`docs/real_world_examples.md`](docs/real_world_examples.md)
-- [`docs/archive_map.md`](docs/archive_map.md)
+- [`docs/benchmark_design.md`](docs/benchmark_design.md)
+- [`docs/benchmark_results.md`](docs/benchmark_results.md)
 
-The canonical commands are:
+Run the benchmark from the repository root:
 
 ```bash
-python -m early_warning_research.run --suite main_paired_mlp
-python -m early_warning_research.run --suite instant_break_control
-python -m early_warning_research.run --suite toy_sanity
-python -m early_warning_research.run --suite all
+python -m early_warning_research.run --benchmark canonical
 pytest -q early_warning_research/tests
 ```
 
@@ -27,6 +23,6 @@ Install dependencies from the repository root:
 pip install -r requirements.txt
 ```
 
-Generated experiment outputs are written under `artifacts/early_warning_research/` by default.
+Canonical benchmark outputs are written under `artifacts/canonical_benchmark/` by default.
 
-Legacy experiments, prototypes, broad conjecture notes, and bundle exports are preserved under [`archive/`](archive). They remain available as historical context, but they are not the canonical path through the repo.
+Exploratory runs, follow-up analyses, and historical bundles are preserved as discovery material. See [`docs/archive_map.md`](docs/archive_map.md) and [`archive/`](archive) for that material.

@@ -1,9 +1,0 @@
-suite_name,run_id,model_kind,seed,learning_rate,input_scale,total_steps,drift_onset_step,symmetry_onset_step,lead_steps,comparable,censored_symmetry,drift_detected,symmetry_detected,verdict_label,final_loss,early_curvature,max_update_norm,max_symmetry_score
-toy_sanity,seed0_lr0.0100_scale0.75,toy_scale_product,0,0.01,0.75,140,27,,,False,True,True,False,censored,0.00040934813279263553,2.124887415052363,0.03553598772242383,1.0827575966501158e-16
-toy_sanity,seed0_lr0.0100_scale1.25,toy_scale_product,0,0.01,1.25,140,25,,,False,True,True,False,censored,0.0006058429445211768,5.874786011615525,0.09817877239300886,9.808995046707557e-17
-toy_sanity,seed0_lr0.0200_scale0.75,toy_scale_product,0,0.02,0.75,140,25,,,False,True,True,False,censored,0.0004093380096138329,2.124887415052363,0.07107197544484765,8.090491123849633e-17
-toy_sanity,seed0_lr0.0200_scale1.25,toy_scale_product,0,0.02,1.25,140,25,,,False,True,True,False,censored,0.0006058429445211764,5.874786011615525,0.19635754478601772,9.808995046584304e-17
-toy_sanity,seed1_lr0.0100_scale0.75,toy_scale_product,1,0.01,0.75,140,28,,,False,True,True,False,censored,0.00039614218569935123,1.8049650667398591,0.02708246640964486,6.6752247958087e-17
-toy_sanity,seed1_lr0.0100_scale1.25,toy_scale_product,1,0.01,1.25,140,25,,,False,True,True,False,censored,0.0005253032880938365,4.975564435502045,0.07481706161929311,7.607992310363955e-17
-toy_sanity,seed1_lr0.0200_scale0.75,toy_scale_product,1,0.02,0.75,140,26,,,False,True,True,False,censored,0.0003946525821872256,1.8049650667398591,0.05416493281928972,8.099324980167883e-17
-toy_sanity,seed1_lr0.0200_scale1.25,toy_scale_product,1,0.02,1.25,140,25,,,False,True,True,False,censored,0.0005253032880938348,4.975564435502045,0.14963412323858621,7.611138713057819e-17

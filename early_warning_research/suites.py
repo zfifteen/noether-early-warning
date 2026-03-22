@@ -36,6 +36,7 @@ class TrainingConfig:
     total_steps: int
     train_size: int
     probe_size: int
+    batch_size: int | None = None
 
 
 @dataclass(frozen=True)
@@ -44,6 +45,8 @@ class PairedMLPConfig:
     pair_count: int = 2
     init_noise: float = 2e-3
     teacher_hidden: int = 3
+    hidden_layers: int = 1
+    use_layer_norm: bool = False
 
 
 @dataclass(frozen=True)
@@ -78,10 +81,30 @@ def _default_probe() -> ProbeConfig:
 def build_suite_registry() -> dict[str, SuiteConfig]:
     detector = _default_detector()
     probe = _default_probe()
-    training = TrainingConfig(total_steps=300, train_size=256, probe_size=256)
 
-    main_model = PairedMLPConfig(input_dim=8, pair_count=2, init_noise=2e-3, teacher_hidden=3)
-    control_model = PairedMLPConfig(input_dim=8, pair_count=2, init_noise=1.5e-1, teacher_hidden=3)
+    full_batch_training = TrainingConfig(total_steps=300, train_size=256, probe_size=256, batch_size=None)
+    stochastic_training = TrainingConfig(total_steps=360, train_size=384, probe_size=256, batch_size=64)
+
+    main_model = PairedMLPConfig(
+        input_dim=8,
+        pair_count=2,
+        init_noise=2e-3,
+        teacher_hidden=3,
+        hidden_layers=1,
+        use_layer_norm=False,
+    )
+    control_model = replace(main_model, init_noise=1.5e-1)
+
+    stochastic_model = PairedMLPConfig(
+        input_dim=10,
+        pair_count=3,
+        init_noise=1.5e-3,
+        teacher_hidden=4,
+        hidden_layers=2,
+        use_layer_norm=True,
+    )
+    stochastic_control_model = replace(stochastic_model, init_noise=8e-2)
+
     toy_model = ToyScaleProductConfig(input_dim=1, init_u=1.0, init_v=1.0, init_noise=1e-2, teacher_slope=3.0)
 
     return {
@@ -89,7 +112,7 @@ def build_suite_registry() -> dict[str, SuiteConfig]:
             name="main_paired_mlp",
             description="Claim-bearing paired-hidden-unit MLP with near-symmetric initialization.",
             kind="paired_mlp",
-            training=training,
+            training=full_batch_training,
             sweep=SweepConfig(
                 seeds=(0, 1, 2),
                 learning_rates=(0.02, 0.04, 0.08),
@@ -103,7 +126,7 @@ def build_suite_registry() -> dict[str, SuiteConfig]:
             name="instant_break_control",
             description="Matched paired-hidden-unit MLP with intentionally broken symmetry at initialization.",
             kind="paired_mlp",
-            training=training,
+            training=full_batch_training,
             sweep=SweepConfig(
                 seeds=(0, 1, 2),
                 learning_rates=(0.02, 0.04, 0.08),
@@ -113,11 +136,39 @@ def build_suite_registry() -> dict[str, SuiteConfig]:
             detector=detector,
             model=control_model,
         ),
+        "main_paired_mlp_stochastic": SuiteConfig(
+            name="main_paired_mlp_stochastic",
+            description="Paired MLP with minibatch SGD and a deeper paired architecture for robustness testing.",
+            kind="paired_mlp",
+            training=stochastic_training,
+            sweep=SweepConfig(
+                seeds=(0, 1, 2),
+                learning_rates=(0.01, 0.02, 0.04),
+                input_scales=(0.75, 1.25, 1.75),
+            ),
+            probe=replace(probe, every_steps=18, microbatches=14, microbatch_size=32),
+            detector=replace(detector, symmetry_floor=0.01, symmetry_z_threshold=2.2),
+            model=stochastic_model,
+        ),
+        "instant_break_control_stochastic": SuiteConfig(
+            name="instant_break_control_stochastic",
+            description="Matched stochastic paired MLP with symmetry broken at initialization.",
+            kind="paired_mlp",
+            training=stochastic_training,
+            sweep=SweepConfig(
+                seeds=(0, 1, 2),
+                learning_rates=(0.01, 0.02, 0.04),
+                input_scales=(0.75, 1.25, 1.75),
+            ),
+            probe=replace(probe, every_steps=18, microbatches=14, microbatch_size=32),
+            detector=replace(detector, symmetry_floor=0.01, symmetry_z_threshold=2.2),
+            model=stochastic_control_model,
+        ),
         "toy_sanity": SuiteConfig(
             name="toy_sanity",
             description="Low-dimensional scale-product sanity check. Included as a sidecar, not primary evidence.",
             kind="toy_scale_product",
-            training=TrainingConfig(total_steps=240, train_size=192, probe_size=192),
+            training=TrainingConfig(total_steps=240, train_size=192, probe_size=192, batch_size=None),
             sweep=SweepConfig(
                 seeds=(0, 1, 2),
                 learning_rates=(0.01, 0.02, 0.04),
@@ -143,7 +194,7 @@ def list_suite_names() -> tuple[str, ...]:
 
 
 def build_smoke_suite(suite: SuiteConfig) -> SuiteConfig:
-    if suite.kind == "paired_mlp":
+    if suite.kind == "paired_mlp" and suite.training.batch_size is None:
         return replace(
             suite,
             training=replace(suite.training, total_steps=180, train_size=128, probe_size=128),
@@ -160,6 +211,27 @@ def build_smoke_suite(suite: SuiteConfig) -> SuiteConfig:
                 symmetry_baseline_probes=2,
             ),
         )
+
+    if suite.kind == "paired_mlp":
+        return replace(
+            suite,
+            training=replace(suite.training, total_steps=300, train_size=192, probe_size=160, batch_size=48),
+            sweep=SweepConfig(
+                seeds=(0, 1),
+                learning_rates=(0.01, 0.02),
+                input_scales=(0.75, 1.25),
+            ),
+            probe=replace(suite.probe, every_steps=15, microbatches=10, microbatch_size=16),
+            detector=replace(
+                suite.detector,
+                drift_window=36,
+                drift_running_mean_window=8,
+                symmetry_baseline_probes=2,
+                symmetry_floor=0.008,
+                symmetry_z_threshold=2.0,
+            ),
+        )
+
     return replace(
         suite,
         training=replace(suite.training, total_steps=140, train_size=128, probe_size=128),

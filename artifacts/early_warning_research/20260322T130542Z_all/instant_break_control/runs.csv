@@ -1,9 +1,0 @@
-suite_name,run_id,model_kind,seed,learning_rate,input_scale,total_steps,drift_onset_step,symmetry_onset_step,lead_steps,comparable,censored_symmetry,drift_detected,symmetry_detected,verdict_label,final_loss,early_curvature,max_update_norm,max_symmetry_score
-instant_break_control,seed0_lr0.0200_scale0.75,paired_mlp,0,0.02,0.75,180,33,12,-21,True,False,True,True,falsifying,0.02526245104613867,2.0905479166691276,0.024428570662744925,0.41410474707261763
-instant_break_control,seed0_lr0.0200_scale1.25,paired_mlp,0,0.02,1.25,180,32,12,-20,True,False,True,True,falsifying,0.03325071269512968,3.0200144037589114,0.030535493167707976,0.5412831710852307
-instant_break_control,seed0_lr0.0400_scale0.75,paired_mlp,0,0.04,0.75,180,31,12,-19,True,False,True,True,falsifying,0.013999375142443402,2.439630914033624,0.06681017145973348,0.40359732255710923
-instant_break_control,seed0_lr0.0400_scale1.25,paired_mlp,0,0.04,1.25,180,31,12,-19,True,False,True,True,falsifying,0.009910948867291885,4.690419437371787,0.1221864237775569,0.6309661711774656
-instant_break_control,seed1_lr0.0200_scale0.75,paired_mlp,1,0.02,0.75,180,34,12,-22,True,False,True,True,falsifying,0.005098330019052026,1.3577631056273851,0.004038600855538415,0.37292842626566347
-instant_break_control,seed1_lr0.0200_scale1.25,paired_mlp,1,0.02,1.25,180,32,12,-20,True,False,True,True,falsifying,0.004018120010776431,4.157593002860734,0.056513412060960916,0.4673926232218091
-instant_break_control,seed1_lr0.0400_scale0.75,paired_mlp,1,0.04,0.75,180,33,12,-21,True,False,True,True,falsifying,0.00458816608239661,1.728006513918909,0.0019621251855684125,0.3370409198483099
-instant_break_control,seed1_lr0.0400_scale1.25,paired_mlp,1,0.04,1.25,180,31,12,-19,True,False,True,True,falsifying,0.007316373416269331,3.9138735286145083,0.1252101754169091,0.42742207463160153
