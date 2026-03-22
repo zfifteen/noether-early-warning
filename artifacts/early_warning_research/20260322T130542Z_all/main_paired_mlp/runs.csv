@@ -1,0 +1,9 @@
+suite_name,run_id,model_kind,seed,learning_rate,input_scale,total_steps,drift_onset_step,symmetry_onset_step,lead_steps,comparable,censored_symmetry,drift_detected,symmetry_detected,verdict_label,final_loss,early_curvature,max_update_norm,max_symmetry_score
+main_paired_mlp,seed0_lr0.0200_scale0.75,paired_mlp,0,0.02,0.75,180,33,,,False,True,True,False,censored,0.029452959627889477,2.100962819403186,0.024677692779595275,0.010944854210344019
+main_paired_mlp,seed0_lr0.0200_scale1.25,paired_mlp,0,0.02,1.25,180,32,,,False,True,True,False,censored,0.04367660306239218,3.045067422792834,0.030833462531806886,0.019617650945175626
+main_paired_mlp,seed0_lr0.0400_scale0.75,paired_mlp,0,0.04,0.75,180,31,,,False,True,True,False,censored,0.07363857330997062,2.435523719962306,0.0665947062595585,0.015904609759037982
+main_paired_mlp,seed0_lr0.0400_scale1.25,paired_mlp,0,0.04,1.25,180,31,84,53,True,False,True,True,supportive,0.022945108376131458,4.733997375041821,0.12130460806320927,0.06250141672826834
+main_paired_mlp,seed1_lr0.0200_scale0.75,paired_mlp,1,0.02,0.75,180,34,,,False,True,True,False,censored,0.005820806256631418,1.3500021914876255,0.0038125180515535253,0.004915927124097982
+main_paired_mlp,seed1_lr0.0200_scale1.25,paired_mlp,1,0.02,1.25,180,32,,,False,True,True,False,censored,0.009982176989343753,4.101173891181763,0.05708031234132012,0.023381675256473514
+main_paired_mlp,seed1_lr0.0400_scale0.75,paired_mlp,1,0.04,0.75,180,32,,,False,True,True,False,censored,0.009258087871283172,1.717380780560699,0.002589356409627358,0.0059901858860502335
+main_paired_mlp,seed1_lr0.0400_scale1.25,paired_mlp,1,0.04,1.25,180,31,,,False,True,True,False,censored,0.011781734280108817,3.943119588787691,0.1257992772691581,0.014195302405699883
