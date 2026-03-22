@@ -1,15 +1,32 @@
-## SYMMETRY EROSION RATE AS A LEADING INDICATOR OF CONSERVATION LAW COLLAPSE
+# Noether Early Warning
 
-A physical or computational system will show measurable degradation in a conserved quantity before that quantity's symmetry is detectably broken, because the rate at which symmetry-violating perturbations accumulate relative to the system's capacity to absorb them determines when conservation stops being approximate and starts being structurally absent.
+This repository is the clean research artifact for the narrow early-warning claim: in the current experiment package, update-norm drift becomes detectable before direct symmetry detection in the main neural-network suite, and that ordering fails in the matched symmetry-broken control.
 
-Standard physics treats symmetry and conservation as a binary pair: either the symmetry holds and the quantity is conserved, or the symmetry breaks and it is not. This is accurate for isolated, Hamiltonian systems, but it misses a key regime in open, noisy, or finite-time systems where the breakdown is gradual and directional.
+The canonical experiment package is [`early_warning_research/`](early_warning_research). It contains the runnable code, tests, and suite definitions for the current claim-bearing experiments.
 
-In those systems, the conserved quantity does not suddenly fail. It decays at a rate proportional to how fast symmetry-violating interactions are being introduced relative to the system's total capacity for absorbing them without restructuring.
+The canonical human-readable entrypoints are:
 
-This means the ratio of perturbation rate to absorption capacity is a genuine early warning signal, not just a description of failure after the fact. A system near the tipping region of this ratio should exhibit measurable drift in the conserved quantity even while the symmetry, if measured statically at any single moment, still appears intact.
+- [`docs/core_claim.md`](docs/core_claim.md)
+- [`docs/results.md`](docs/results.md)
+- [`docs/real_world_examples.md`](docs/real_world_examples.md)
+- [`docs/archive_map.md`](docs/archive_map.md)
 
-The non-obvious part is the decoupling of timescales: the symmetry can look whole in a snapshot while the conserved quantity is already eroding in the time-series, because symmetry is a global property of the action but conservation is a local, moment-to-moment integral that accumulates errors faster than a single-frame symmetry test would reveal.
+The canonical commands are:
 
-This implies that monitoring conservation violation in real time is a strictly more sensitive probe of oncoming symmetry breaking than testing the symmetry directly, reversing the conventional explanatory arrow that runs from symmetry to conservation.
+```bash
+python -m early_warning_research.run --suite main_paired_mlp
+python -m early_warning_research.run --suite instant_break_control
+python -m early_warning_research.run --suite toy_sanity
+python -m early_warning_research.run --suite all
+pytest -q early_warning_research/tests
+```
 
-Concrete expected pattern: in neural network training under finite learning rate (where Noether-like conservation laws are known to be broken by discrete steps), the L2 norm of weight increments should drift measurably before any detectable asymmetry appears in the gradient covariance structure, and the drift amplitude should scale with the ratio of learning rate to loss-landscape curvature, not with the learning rate alone.
+Install dependencies from the repository root:
+
+```bash
+pip install -r requirements.txt
+```
+
+Generated experiment outputs are written under `artifacts/early_warning_research/` by default.
+
+Legacy experiments, prototypes, broad conjecture notes, and bundle exports are preserved under [`archive/`](archive). They remain available as historical context, but they are not the canonical path through the repo.
