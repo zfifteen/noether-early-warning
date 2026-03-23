@@ -154,6 +154,6 @@ In the benchmarked regime, all four benchmarks support the claim package. The cl
 # Artifact References
 
 - [Aligned claims document](../docs/core_claim.md)
-- [Atomic benchmark test plan](../TEST_PLAN.md)
+- [Atomic benchmark test plan](../docs/benchmark_test_plan.md)
 - [Consolidated benchmark suite summary](../artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/summary.json)
 - [Consolidated benchmark suite report](../artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/REPORT.md)

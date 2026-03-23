@@ -46,4 +46,4 @@ Benchmark 2 does not test:
 - detector bakeoffs
 - robustness or generalization across architectures or regimes
 
-Benchmark 2 follows the atomic benchmark strategy described in `TEST_PLAN.md`.
+Benchmark 2 follows the atomic benchmark strategy described in `docs/benchmark_test_plan.md`.

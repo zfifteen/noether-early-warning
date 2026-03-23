@@ -43,7 +43,7 @@ Its current implementation path is:
 
 Benchmark 2 is the regime-specific mirror of Benchmark 1. It exists to show that the Benchmark 1 ordering is not a generic detector artifact.
 
-Benchmark 3 will test this statement only:
+Benchmark 3 tests this statement only:
 
 under a fixed practical observation budget, drift is the more sensitive detector.
 
@@ -54,20 +54,20 @@ This benchmark is the atomic version of the “more sensitive probe” language 
 
 Benchmark 3 should succeed only if drift detection rate exceeds direct symmetry detection rate by a pre-registered margin under that fixed budget. It should not say anything about instant-break controls, detector rankings, or broad generalization.
 
-The planned implementation pair is:
+Its implementation pair is:
 
 - `early_warning_research/benchmark3.py`
 - `early_warning_research/benchmark3_design.md`
 
-Benchmark 4 will test this statement only:
+Benchmark 4 tests this statement only:
 
 at the drift alarm time, direct symmetry is still below its own detection threshold.
 
-This benchmark is the atomic version of the accumulation-versus-snapshot part of the claims document. It should stay in the gradual claim-bearing suite and evaluate the direct symmetry score at the first probe at or after drift onset. It is not an ordering benchmark. It is a same-timepoint separation benchmark.
+This benchmark is the atomic version of the accumulation-versus-snapshot part of the claims document. It stays in the gradual claim-bearing suite and evaluates the direct symmetry score on the exact saved model state at the drift-onset step. It is not an ordering benchmark. It is a same-timepoint separation benchmark.
 
-Benchmark 4 should succeed only if, in a high fraction of runs, the drift detector has already fired while the direct symmetry detector has still not crossed its threshold at that matched timepoint.
+Benchmark 4 should succeed only if, in a high fraction of runs, the drift detector has already fired while the direct symmetry detector has still not crossed its threshold on that exact alarm-state measurement.
 
-The planned implementation pair is:
+Its implementation pair is:
 
 - `early_warning_research/benchmark4.py`
 - `early_warning_research/benchmark4_design.md`

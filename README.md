@@ -67,7 +67,7 @@ What makes the design informative is that the suite keeps the core setup control
 - `B3` imposes a finite observation constraint
 - `B4` measures the exact saved model state at the alarm step
 
-The benchmark strategy is documented in [TEST_PLAN.md](./TEST_PLAN.md), and the aligned claims document is [core_claim.md](./docs/core_claim.md).
+The benchmark strategy is documented in [benchmark_test_plan.md](./docs/benchmark_test_plan.md), and the aligned claims document is [core_claim.md](./docs/core_claim.md).
 
 ## Quick Start
 
@@ -263,7 +263,7 @@ Taken together, they do not just show that drift can come first. They show that 
 ## Project Structure
 
 - [core_claim.md](./docs/core_claim.md): aligned claims document
-- [TEST_PLAN.md](./TEST_PLAN.md): atomic benchmark strategy
+- [benchmark_test_plan.md](./docs/benchmark_test_plan.md): atomic benchmark strategy
 - [FINDINGS_REPORT.md](./docs/FINDINGS_REPORT.md): standalone findings report
 - [early_warning_research](./early_warning_research): benchmark implementations
 - [archive](./archive): historical exploratory material

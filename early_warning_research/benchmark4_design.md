@@ -47,4 +47,4 @@ Benchmark 4 does not test:
 - detector bakeoffs
 - robustness or generalization across architectures or regimes
 
-Benchmark 4 follows the atomic benchmark strategy described in `TEST_PLAN.md`.
+Benchmark 4 follows the atomic benchmark strategy described in `docs/benchmark_test_plan.md`.
