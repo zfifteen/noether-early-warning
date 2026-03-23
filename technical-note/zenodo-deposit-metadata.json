@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Early Warning from Drift Before Direct Symmetry Detection",
+    "upload_type": "publication",
+    "publication_type": "technicalnote",
+    "publication_date": "2026-03-22",
+    "description": "<p>This technical note presents a four-benchmark empirical claim package for early warning from drift before direct symmetry detection. The note tests ordering in the gradual regime, reversal in an instant-break control, finite-budget sensitivity, and exact alarm-time separation. In the benchmarked paired-MLP regime, all four benchmarks support the claim package, showing that drift functions as an earlier and practically useful warning signal than direct symmetry detection under gradual symmetry breaking.</p>",
+    "creators": [
+      {
+        "name": "Lopez III, Dionisio Alberto"
+      }
+    ],
+    "keywords": [
+      "early warning",
+      "symmetry breaking",
+      "drift detection",
+      "training dynamics",
+      "benchmarking",
+      "neural networks",
+      "optimization",
+      "machine learning"
+    ],
+    "access_right": "open",
+    "license": "cc-by-4.0",
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/zfifteen/noether-early-warning",
+        "scheme": "url",
+        "relation": "isSupplementedBy",
+        "resource_type": "software"
+      }
+    ]
+  }
+}
