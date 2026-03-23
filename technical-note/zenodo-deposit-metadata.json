@@ -24,6 +24,12 @@
     "license": "cc-by-4.0",
     "related_identifiers": [
       {
+        "identifier": "10.5281/zenodo.19184861",
+        "scheme": "doi",
+        "relation": "isSupplementedBy",
+        "resource_type": "software"
+      },
+      {
         "identifier": "https://github.com/zfifteen/noether-early-warning",
         "scheme": "url",
         "relation": "isSupplementedBy",
