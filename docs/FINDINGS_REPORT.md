@@ -28,21 +28,19 @@ The strongest high-level findings are:
 
 The consolidated suite artifact is here:
 
-- [summary.json](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/summary.json)
-- [REPORT.md](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/REPORT.md)
+- [summary.json](../artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/summary.json)
+- [REPORT.md](../artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/REPORT.md)
 
-## Top-Level Plot
+## At a Glance
 
-This suite-level figure summarizes the final verdicts. All four benchmark categories are green and supported.
+The core evidence is easiest to read as a compact benchmark table:
 
-![B1-B4 suite verdicts](./findings_assets/suite_verdicts.png)
-
-What this plot means:
-
-- `B1` shows the early-warning ordering itself.
-- `B2` shows that the ordering is regime-specific rather than generic.
-- `B3` shows the practical sensitivity advantage under finite observation budgets.
-- `B4` shows alarm-time separation: when drift first alarms, direct symmetry is usually still below threshold.
+| Benchmark | What it establishes | Result |
+|---|---|---|
+| `B1` | Drift leads in gradual regimes | `27/27` runs, median lead `+84` steps |
+| `B2` | The effect is not generic | `27/27` runs, median lead `-37` steps |
+| `B3` | Drift matters under finite monitoring limits | Drift `27/27` vs symmetry `18/27` within `300` steps |
+| `B4` | Drift is useful at the exact alarm moment | `24/27` runs still sub-threshold at alarm |
 
 ## Benchmark Summary
 
@@ -189,28 +187,28 @@ Taken together, they do not just show that drift can come first. They show that 
 
 ### B1 Fine-Grained View
 
-- Artifact: [summary.json](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark1/20260322T152418Z_benchmark1/summary.json)
+- Artifact: [summary.json](../artifacts/benchmark1/20260322T152418Z_benchmark1/summary.json)
 - All 27 runs were comparable and supportive.
 - The median lead was `84` steps, but some runs had much larger separations.
 - This means the early-warning effect is not a marginal edge case in the benchmarked gradual regime.
 
 ### B2 Fine-Grained View
 
-- Artifact: [summary.json](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark2/20260322T154257Z_benchmark2/summary.json)
+- Artifact: [summary.json](../artifacts/benchmark2/20260322T154257Z_benchmark2/summary.json)
 - All 27 runs were comparable and supportive for the reversal claim.
 - The median lead was `-37` steps.
 - This is an important falsification guard: if direct symmetry is already broken, the ordering flips the other way.
 
 ### B3 Fine-Grained View
 
-- Artifact: [summary.json](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark3/20260322T155414Z_benchmark3/summary.json)
+- Artifact: [summary.json](../artifacts/benchmark3/20260322T155414Z_benchmark3/summary.json)
 - Drift was detected within 300 steps in every run.
 - Direct symmetry was detected within the same 300-step budget in only 18 runs.
 - The `9` drift-only runs are the practical win cases for the hypothesis.
 
 ### B4 Fine-Grained View
 
-- Artifact: [summary.json](/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark4/20260322T161101Z_benchmark4/summary.json)
+- Artifact: [summary.json](../artifacts/benchmark4/20260322T161101Z_benchmark4/summary.json)
 - The final benchmark design uses the exact saved model state at the drift-onset step.
 - This corrected an earlier draft benchmark that used the next scheduled probe and therefore misstated the practical claim.
 - Under the corrected design, `24/27` exact alarm-state measurements were supportive.
@@ -218,7 +216,7 @@ Taken together, they do not just show that drift can come first. They show that 
 
 ## Bottom Line
 
-The benchmark suite supports the full claims package expressed in [core_claim.md](/Users/velocityworks/IdeaProjects/noether-early-warning/docs/core_claim.md).
+The benchmark suite supports the full claims package expressed in [core_claim.md](./core_claim.md).
 
 The main conclusion is simple:
 

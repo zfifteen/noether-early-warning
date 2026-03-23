@@ -15,7 +15,7 @@ def smoke_suite(tmp_path_factory: pytest.TempPathFactory) -> dict[str, object]:
 
 def test_smoke_suite_writes_expected_artifacts(smoke_suite: dict[str, object]) -> None:
     artifact_files = smoke_suite["artifact_files"]
-    for key in ("summary_json", "benchmark_rows_csv", "report_md", "suite_verdicts_png"):
+    for key in ("summary_json", "benchmark_rows_csv", "report_md"):
         assert Path(artifact_files[key]).exists()
 
 

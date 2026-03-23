@@ -17,6 +17,7 @@ import torch.nn.functional as F
 
 from .detectors import detect_drift_onset, detect_symmetry_onset
 from .models import PairedMLP, ToyScaleProduct
+from .path_utils import repo_relative_path, repo_root
 from .plotting import plot_detector_suite_comparison, plot_onset_ordering, plot_representative_timeseries
 from .suites import (
     DetectorConfig,
@@ -1085,7 +1086,7 @@ def run_suite(suite: SuiteConfig, output_dir: Path, quiet: bool = False) -> dict
         "seed_list": list(suite.sweep.seeds),
         "detector_thresholds": asdict(suite.detector),
         "libraries": library_versions(),
-        "output_dir": str(output_dir),
+        "output_dir": repo_relative_path(output_dir),
         "representative_run_id": representative_run_id,
         "primary_detector": primary_detector_name(suite),
         "primary_detector_verdict": primary_verdict,
@@ -1095,16 +1096,16 @@ def run_suite(suite: SuiteConfig, output_dir: Path, quiet: bool = False) -> dict
         "robustness_details": robustness_details,
         "stability_summary": stability_summary,
         "artifact_files": {
-            "summary_json": str(summary_json),
-            "runs_csv": str(runs_csv),
-            "step_metrics_csv": str(step_csv),
-            "probe_metrics_csv": str(probe_csv),
-            "detector_summary_csv": str(detector_summary_csv),
-            "detector_summary_json": str(detector_summary_json),
-            "stability_table_csv": str(stability_summary_csv),
-            "stability_summary_json": str(stability_summary_json) if stability_summary is not None else None,
-            "representative_timeseries_png": str(timeseries_png),
-            "onset_ordering_png": str(ordering_png),
+            "summary_json": repo_relative_path(summary_json),
+            "runs_csv": repo_relative_path(runs_csv),
+            "step_metrics_csv": repo_relative_path(step_csv),
+            "probe_metrics_csv": repo_relative_path(probe_csv),
+            "detector_summary_csv": repo_relative_path(detector_summary_csv),
+            "detector_summary_json": repo_relative_path(detector_summary_json),
+            "stability_table_csv": repo_relative_path(stability_summary_csv),
+            "stability_summary_json": repo_relative_path(stability_summary_json) if stability_summary is not None else None,
+            "representative_timeseries_png": repo_relative_path(timeseries_png),
+            "onset_ordering_png": repo_relative_path(ordering_png),
         },
         "run_summaries": run_summaries,
     }
@@ -1131,8 +1132,7 @@ def _bundle_rows_from_suite_summaries(summaries: dict[str, dict[str, object]]) -
 
 
 def default_output_root() -> Path:
-    repo_root = Path(__file__).resolve().parent.parent
-    return repo_root / "artifacts" / "exploratory" / "early_warning_research"
+    return repo_root() / "artifacts" / "exploratory" / "early_warning_research"
 
 
 def run_named_suite(
@@ -1186,16 +1186,16 @@ def run_named_suite(
         combined = {
             "suite_name": "all",
             "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-            "output_dir": str(invocation_dir),
+            "output_dir": repo_relative_path(invocation_dir),
             "smoke": smoke,
             "libraries": library_versions(),
             "control_guard_passed": control_guard_passed,
             "overall_claim_verdict": overall_claim_verdict,
             "artifact_files": {
-                "summary_json": str(invocation_dir / "summary.json"),
-                "detector_bundle_summary_csv": str(detector_bundle_csv),
-                "detector_bundle_summary_json": str(detector_bundle_json),
-                "detector_suite_comparison_png": str(detector_comparison_png),
+                "summary_json": repo_relative_path(invocation_dir / "summary.json"),
+                "detector_bundle_summary_csv": repo_relative_path(detector_bundle_csv),
+                "detector_bundle_summary_json": repo_relative_path(detector_bundle_json),
+                "detector_suite_comparison_png": repo_relative_path(detector_comparison_png),
             },
             "suites": summaries,
         }

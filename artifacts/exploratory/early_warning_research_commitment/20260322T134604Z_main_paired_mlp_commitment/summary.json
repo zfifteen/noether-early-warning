@@ -1,7 +1,7 @@
 {
   "suite_name": "main_paired_mlp",
   "timestamp_utc": "2026-03-22T13:46:07.745510+00:00",
-  "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_commitment/20260322T134604Z_main_paired_mlp_commitment",
+  "output_dir": "artifacts/early_warning_research_commitment/20260322T134604Z_main_paired_mlp_commitment",
   "parameters": {
     "horizon_short": 30,
     "horizon_long": 60,
@@ -115,8 +115,8 @@
     "auc_supportive_vs_censored": 0.9876543209876543
   },
   "artifact_files": {
-    "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_commitment/20260322T134604Z_main_paired_mlp_commitment/runs.csv",
-    "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_commitment/20260322T134604Z_main_paired_mlp_commitment/summary.json",
-    "commitment_separation_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_commitment/20260322T134604Z_main_paired_mlp_commitment/commitment_separation.png"
+    "runs_csv": "artifacts/early_warning_research_commitment/20260322T134604Z_main_paired_mlp_commitment/runs.csv",
+    "summary_json": "artifacts/early_warning_research_commitment/20260322T134604Z_main_paired_mlp_commitment/summary.json",
+    "commitment_separation_png": "artifacts/early_warning_research_commitment/20260322T134604Z_main_paired_mlp_commitment/commitment_separation.png"
   }
 }

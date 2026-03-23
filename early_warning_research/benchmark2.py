@@ -10,6 +10,7 @@ from pathlib import Path
 import numpy as np
 
 from .experiments import execute_run, library_versions
+from .path_utils import repo_relative_path, repo_root
 from .plotting import plot_onset_ordering, plot_representative_timeseries
 from .suites import get_suite, suite_to_dict
 
@@ -32,8 +33,7 @@ def _write_csv(path: Path, rows: list[dict[str, object]]) -> None:
 
 
 def default_benchmark_output_root() -> Path:
-    repo_root = Path(__file__).resolve().parent.parent
-    return repo_root / "artifacts" / BENCHMARK_NAME
+    return repo_root() / "artifacts" / BENCHMARK_NAME
 
 
 def _benchmark_suite(smoke: bool) -> object:
@@ -182,7 +182,7 @@ def run_benchmark2(
         "benchmark_name": BENCHMARK_NAME,
         "benchmark2_verdict": benchmark2_verdict,
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-        "output_dir": str(output_dir),
+        "output_dir": repo_relative_path(output_dir),
         "smoke": smoke,
         "direct_symmetry_detector": DIRECT_SYMMETRY_DETECTOR,
         "benchmark_horizon_steps": BENCHMARK_HORIZON,
@@ -191,10 +191,10 @@ def run_benchmark2(
         "verdict_stats": verdict_stats,
         "representative_run_id": representative_run_id,
         "artifact_files": {
-            "summary_json": str(summary_json),
-            "runs_csv": str(runs_csv),
-            "representative_timeseries_png": str(timeseries_png),
-            "onset_ordering_png": str(ordering_png),
+            "summary_json": repo_relative_path(summary_json),
+            "runs_csv": repo_relative_path(runs_csv),
+            "representative_timeseries_png": repo_relative_path(timeseries_png),
+            "onset_ordering_png": repo_relative_path(ordering_png),
         },
         "run_summaries": run_rows,
     }

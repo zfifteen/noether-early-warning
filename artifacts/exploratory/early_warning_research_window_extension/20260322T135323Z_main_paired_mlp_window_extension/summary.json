@@ -1,7 +1,7 @@
 {
   "suite_name": "main_paired_mlp",
   "timestamp_utc": "2026-03-22T13:54:22.307510+00:00",
-  "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_window_extension/20260322T135323Z_main_paired_mlp_window_extension",
+  "output_dir": "artifacts/early_warning_research_window_extension/20260322T135323Z_main_paired_mlp_window_extension",
   "base_suite": {
     "name": "main_paired_mlp",
     "description": "Claim-bearing paired-hidden-unit MLP with near-symmetric initialization.",
@@ -155,8 +155,8 @@
     }
   ],
   "artifact_files": {
-    "base_runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_window_extension/20260322T135323Z_main_paired_mlp_window_extension/base_runs.csv",
-    "extended_runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_window_extension/20260322T135323Z_main_paired_mlp_window_extension/extended_runs.csv",
-    "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research_window_extension/20260322T135323Z_main_paired_mlp_window_extension/summary.json"
+    "base_runs_csv": "artifacts/early_warning_research_window_extension/20260322T135323Z_main_paired_mlp_window_extension/base_runs.csv",
+    "extended_runs_csv": "artifacts/early_warning_research_window_extension/20260322T135323Z_main_paired_mlp_window_extension/extended_runs.csv",
+    "summary_json": "artifacts/early_warning_research_window_extension/20260322T135323Z_main_paired_mlp_window_extension/summary.json"
   }
 }

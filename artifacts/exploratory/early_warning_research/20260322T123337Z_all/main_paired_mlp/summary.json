@@ -75,7 +75,7 @@
     "torch": "2.10.0",
     "matplotlib": "3.10.8"
   },
-  "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp",
+  "output_dir": "early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp",
   "representative_run_id": "seed1_lr0.0800_scale1.25",
   "verdict_stats": {
     "total_runs": 27,
@@ -88,12 +88,12 @@
     "median_lead_steps": 46.0
   },
   "artifact_files": {
-    "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp/summary.json",
-    "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp/runs.csv",
-    "step_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp/step_metrics.csv",
-    "probe_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp/probe_metrics.csv",
-    "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp/figures/representative_timeseries.png",
-    "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp/figures/onset_ordering.png"
+    "summary_json": "early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp/summary.json",
+    "runs_csv": "early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp/runs.csv",
+    "step_metrics_csv": "early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp/step_metrics.csv",
+    "probe_metrics_csv": "early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp/probe_metrics.csv",
+    "representative_timeseries_png": "early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp/figures/representative_timeseries.png",
+    "onset_ordering_png": "early_warning_research/artifacts/20260322T123337Z_all/main_paired_mlp/figures/onset_ordering.png"
   },
   "run_summaries": [
     {

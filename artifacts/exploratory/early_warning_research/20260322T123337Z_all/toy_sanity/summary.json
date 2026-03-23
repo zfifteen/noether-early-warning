@@ -75,7 +75,7 @@
     "torch": "2.10.0",
     "matplotlib": "3.10.8"
   },
-  "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/toy_sanity",
+  "output_dir": "early_warning_research/artifacts/20260322T123337Z_all/toy_sanity",
   "representative_run_id": "seed0_lr0.0100_scale0.75",
   "verdict_stats": {
     "total_runs": 18,
@@ -88,12 +88,12 @@
     "median_lead_steps": null
   },
   "artifact_files": {
-    "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/toy_sanity/summary.json",
-    "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/toy_sanity/runs.csv",
-    "step_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/toy_sanity/step_metrics.csv",
-    "probe_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/toy_sanity/probe_metrics.csv",
-    "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/toy_sanity/figures/representative_timeseries.png",
-    "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/early_warning_research/artifacts/20260322T123337Z_all/toy_sanity/figures/onset_ordering.png"
+    "summary_json": "early_warning_research/artifacts/20260322T123337Z_all/toy_sanity/summary.json",
+    "runs_csv": "early_warning_research/artifacts/20260322T123337Z_all/toy_sanity/runs.csv",
+    "step_metrics_csv": "early_warning_research/artifacts/20260322T123337Z_all/toy_sanity/step_metrics.csv",
+    "probe_metrics_csv": "early_warning_research/artifacts/20260322T123337Z_all/toy_sanity/probe_metrics.csv",
+    "representative_timeseries_png": "early_warning_research/artifacts/20260322T123337Z_all/toy_sanity/figures/representative_timeseries.png",
+    "onset_ordering_png": "early_warning_research/artifacts/20260322T123337Z_all/toy_sanity/figures/onset_ordering.png"
   },
   "run_summaries": [
     {

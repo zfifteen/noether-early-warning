@@ -2,7 +2,7 @@
   "benchmark_name": "benchmark2",
   "benchmark2_verdict": "SUPPORTED",
   "timestamp_utc": "2026-03-22T15:44:31.565163+00:00",
-  "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark2/20260322T154257Z_benchmark2",
+  "output_dir": "artifacts/benchmark2/20260322T154257Z_benchmark2",
   "smoke": false,
   "direct_symmetry_detector": "covariance_mismatch",
   "benchmark_horizon_steps": 9600,
@@ -80,10 +80,10 @@
   },
   "representative_run_id": "seed0_lr0.0200_scale1.25",
   "artifact_files": {
-    "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark2/20260322T154257Z_benchmark2/summary.json",
-    "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark2/20260322T154257Z_benchmark2/runs.csv",
-    "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark2/20260322T154257Z_benchmark2/figures/representative_timeseries.png",
-    "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark2/20260322T154257Z_benchmark2/figures/onset_ordering.png"
+    "summary_json": "artifacts/benchmark2/20260322T154257Z_benchmark2/summary.json",
+    "runs_csv": "artifacts/benchmark2/20260322T154257Z_benchmark2/runs.csv",
+    "representative_timeseries_png": "artifacts/benchmark2/20260322T154257Z_benchmark2/figures/representative_timeseries.png",
+    "onset_ordering_png": "artifacts/benchmark2/20260322T154257Z_benchmark2/figures/onset_ordering.png"
   },
   "run_summaries": [
     {

@@ -6,20 +6,18 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-import matplotlib.pyplot as plt
-
 from .benchmark import run_benchmark1
 from .benchmark2 import run_benchmark2
 from .benchmark3 import run_benchmark3
 from .benchmark4 import run_benchmark4
+from .path_utils import repo_relative_path, repo_root
 
 
 SUITE_NAME = "benchmark_suite"
 
 
 def default_output_root() -> Path:
-    repo_root = Path(__file__).resolve().parent.parent
-    return repo_root / "artifacts" / SUITE_NAME
+    return repo_root() / "artifacts" / SUITE_NAME
 
 
 def _write_csv(path: Path, rows: list[dict[str, object]]) -> None:
@@ -55,46 +53,38 @@ def _benchmark_row(number: int, name: str, claim: str, summary: dict[str, object
     return row
 
 
-def _plot_suite_verdicts(rows: list[dict[str, object]], output_path: Path) -> None:
-    verdict_color = {
-        "SUPPORTED": "#2b8a3e",
-        "INCONCLUSIVE": "#e67700",
-        "FALSIFIED": "#c92a2a",
-    }
-    score_by_verdict = {
-        "SUPPORTED": 1.0,
-        "INCONCLUSIVE": 0.5,
-        "FALSIFIED": 0.0,
-    }
-
-    labels = [row["benchmark"] for row in rows]
-    values = [score_by_verdict[row["verdict"]] for row in rows]
-    colors = [verdict_color[row["verdict"]] for row in rows]
-
-    fig, ax = plt.subplots(figsize=(7.5, 3.8))
-    bars = ax.bar(labels, values, color=colors, width=0.6)
-    ax.set_ylim(0.0, 1.08)
-    ax.set_ylabel("Verdict Score")
-    ax.set_title("B1-B4 Consolidated Verdicts")
-    ax.set_yticks([0.0, 0.5, 1.0], labels=["Falsified", "Inconclusive", "Supported"])
-    ax.grid(axis="y", linestyle="--", linewidth=0.6, alpha=0.5)
-    for bar, row in zip(bars, rows):
-        ax.text(
-            bar.get_x() + bar.get_width() / 2,
-            bar.get_height() + 0.03,
-            row["verdict"],
-            ha="center",
-            va="bottom",
-            fontsize=9,
+def _summary_result_text(row: dict[str, object]) -> str:
+    benchmark = row["benchmark"]
+    if benchmark == "B1":
+        return f"`{row['stat_supportive_runs']}/{row['stat_total_runs']}` runs, median lead `{row['stat_median_lead_steps']:+.0f}` steps"
+    if benchmark == "B2":
+        return f"`{row['stat_supportive_runs']}/{row['stat_total_runs']}` runs, median lead `{row['stat_median_lead_steps']:+.0f}` steps"
+    if benchmark == "B3":
+        return (
+            f"Drift `{row['stat_drift_detected_runs']}/{row['stat_total_runs']}` vs symmetry "
+            f"`{row['stat_symmetry_detected_runs']}/{row['stat_total_runs']}` within `300` steps"
         )
-    fig.tight_layout()
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(output_path, dpi=180, bbox_inches="tight")
-    plt.close(fig)
+    if benchmark == "B4":
+        return f"`{row['stat_supportive_runs']}/{row['stat_alarm_state_runs']}` runs still sub-threshold at alarm"
+    raise ValueError(f"Unexpected benchmark row: {benchmark}")
+
+
+def _summary_establishes_text(row: dict[str, object]) -> str:
+    benchmark = row["benchmark"]
+    if benchmark == "B1":
+        return "Drift leads in gradual regimes"
+    if benchmark == "B2":
+        return "The effect is not generic"
+    if benchmark == "B3":
+        return "Drift matters under finite monitoring limits"
+    if benchmark == "B4":
+        return "Drift is useful at the exact alarm moment"
+    raise ValueError(f"Unexpected benchmark row: {benchmark}")
 
 
 def _build_report(summary: dict[str, object], report_path: Path) -> None:
     rows = summary["benchmark_rows"]
+    root = repo_root()
     lines: list[str] = []
     lines.append("# B1-B4 Consolidated Benchmark Report")
     lines.append("")
@@ -102,12 +92,14 @@ def _build_report(summary: dict[str, object], report_path: Path) -> None:
     lines.append("")
     lines.append("Overall result: the validated benchmark package supports the claims document.")
     lines.append("")
-    lines.append("![Suite verdicts](%s)" % summary["artifact_files"]["suite_verdicts_png"])
+    lines.append("## At a Glance")
     lines.append("")
-    lines.append("## Summary")
-    lines.append("")
+    lines.append("| Benchmark | What it establishes | Result |")
+    lines.append("|---|---|---|")
     for row in rows:
-        lines.append(f"- {row['benchmark']} `{row['verdict']}`: {row['claim']}")
+        lines.append(
+            f"| `{row['benchmark']}` | {_summary_establishes_text(row)} | {_summary_result_text(row)} |"
+        )
     lines.append("")
     lines.append("## Details")
     lines.append("")
@@ -126,11 +118,14 @@ def _build_report(summary: dict[str, object], report_path: Path) -> None:
         for key, value in stat_lines:
             lines.append(f"- {key.removeprefix('stat_')}: `{value}`")
         lines.append("")
-        lines.append(f"Artifacts: [{row['output_dir']}]({row['output_dir']})")
+        artifact_dir = (root / row["output_dir"]).resolve().relative_to(report_path.parent.resolve()).as_posix()
+        timeseries_png = (root / row["timeseries_png"]).resolve().relative_to(report_path.parent.resolve()).as_posix()
+        ordering_png = (root / row["ordering_png"]).resolve().relative_to(report_path.parent.resolve()).as_posix()
+        lines.append(f"Artifacts: [{artifact_dir}]({artifact_dir})")
         lines.append("")
-        lines.append(f"![{row['benchmark']} representative timeseries]({row['timeseries_png']})")
+        lines.append(f"![{row['benchmark']} representative timeseries]({timeseries_png})")
         lines.append("")
-        lines.append(f"![{row['benchmark']} onset ordering]({row['ordering_png']})")
+        lines.append(f"![{row['benchmark']} onset ordering]({ordering_png})")
         lines.append("")
 
     report_path.write_text("\n".join(lines))
@@ -145,8 +140,6 @@ def run_benchmark_suite(
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     output_dir = base_output / f"{timestamp}_{SUITE_NAME}"
     output_dir.mkdir(parents=True, exist_ok=True)
-    figures_dir = output_dir / "figures"
-    figures_dir.mkdir(parents=True, exist_ok=True)
 
     benchmark1 = run_benchmark1(output_root=output_dir / "benchmark1", smoke=smoke, quiet=quiet)
     benchmark2 = run_benchmark2(output_root=output_dir / "benchmark2", smoke=smoke, quiet=quiet)
@@ -184,23 +177,20 @@ def run_benchmark_suite(
     suite_rows_csv = output_dir / "benchmark_rows.csv"
     suite_summary_json = output_dir / "summary.json"
     suite_report_md = output_dir / "REPORT.md"
-    suite_verdicts_png = figures_dir / "suite_verdicts.png"
 
     _write_csv(suite_rows_csv, rows)
-    _plot_suite_verdicts(rows, suite_verdicts_png)
 
     summary = {
         "suite_name": SUITE_NAME,
         "suite_verdict": suite_verdict,
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-        "output_dir": str(output_dir),
+        "output_dir": repo_relative_path(output_dir),
         "smoke": smoke,
         "benchmark_rows": rows,
         "artifact_files": {
-            "summary_json": str(suite_summary_json),
-            "benchmark_rows_csv": str(suite_rows_csv),
-            "report_md": str(suite_report_md),
-            "suite_verdicts_png": str(suite_verdicts_png),
+            "summary_json": repo_relative_path(suite_summary_json),
+            "benchmark_rows_csv": repo_relative_path(suite_rows_csv),
+            "report_md": repo_relative_path(suite_report_md),
         },
         "benchmark_outputs": {
             "benchmark1": benchmark1["output_dir"],

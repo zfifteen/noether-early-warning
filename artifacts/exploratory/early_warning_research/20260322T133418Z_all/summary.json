@@ -1,7 +1,7 @@
 {
   "suite_name": "all",
   "timestamp_utc": "2026-03-22T13:34:33.984755+00:00",
-  "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all",
+  "output_dir": "artifacts/early_warning_research/20260322T133418Z_all",
   "smoke": true,
   "libraries": {
     "python": "3.13.0",
@@ -13,10 +13,10 @@
   "control_guard_passed": true,
   "overall_claim_verdict": "INCONCLUSIVE",
   "artifact_files": {
-    "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/summary.json",
-    "detector_bundle_summary_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/detector_bundle_summary.csv",
-    "detector_bundle_summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/detector_bundle_summary.json",
-    "detector_suite_comparison_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/figures/detector_suite_comparison.png"
+    "summary_json": "artifacts/early_warning_research/20260322T133418Z_all/summary.json",
+    "detector_bundle_summary_csv": "artifacts/early_warning_research/20260322T133418Z_all/detector_bundle_summary.csv",
+    "detector_bundle_summary_json": "artifacts/early_warning_research/20260322T133418Z_all/detector_bundle_summary.json",
+    "detector_suite_comparison_png": "artifacts/early_warning_research/20260322T133418Z_all/figures/detector_suite_comparison.png"
   },
   "suites": {
     "main_paired_mlp": {
@@ -95,7 +95,7 @@
         "torch": "2.10.0",
         "matplotlib": "3.10.8"
       },
-      "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp",
+      "output_dir": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp",
       "representative_run_id": "seed0_lr0.0200_scale0.75",
       "primary_detector": "covariance_mismatch",
       "primary_detector_verdict": "INCONCLUSIVE",
@@ -483,16 +483,16 @@
         }
       },
       "artifact_files": {
-        "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/summary.json",
-        "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/runs.csv",
-        "step_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/step_metrics.csv",
-        "probe_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/probe_metrics.csv",
-        "detector_summary_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/detector_summary.csv",
-        "detector_summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/detector_summary.json",
-        "stability_table_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/stability_table.csv",
-        "stability_summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/stability_summary.json",
-        "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/figures/representative_timeseries.png",
-        "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/figures/onset_ordering.png"
+        "summary_json": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/summary.json",
+        "runs_csv": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/runs.csv",
+        "step_metrics_csv": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/step_metrics.csv",
+        "probe_metrics_csv": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/probe_metrics.csv",
+        "detector_summary_csv": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/detector_summary.csv",
+        "detector_summary_json": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/detector_summary.json",
+        "stability_table_csv": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/stability_table.csv",
+        "stability_summary_json": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/stability_summary.json",
+        "representative_timeseries_png": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/figures/representative_timeseries.png",
+        "onset_ordering_png": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp/figures/onset_ordering.png"
       },
       "run_summaries": [
         {
@@ -949,7 +949,7 @@
         "torch": "2.10.0",
         "matplotlib": "3.10.8"
       },
-      "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control",
+      "output_dir": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control",
       "representative_run_id": "seed0_lr0.0200_scale0.75",
       "primary_detector": "covariance_mismatch",
       "primary_detector_verdict": "FALSIFIED",
@@ -1352,16 +1352,16 @@
         }
       },
       "artifact_files": {
-        "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/summary.json",
-        "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/runs.csv",
-        "step_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/step_metrics.csv",
-        "probe_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/probe_metrics.csv",
-        "detector_summary_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/detector_summary.csv",
-        "detector_summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/detector_summary.json",
-        "stability_table_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/stability_table.csv",
-        "stability_summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/stability_summary.json",
-        "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/figures/representative_timeseries.png",
-        "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/figures/onset_ordering.png"
+        "summary_json": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/summary.json",
+        "runs_csv": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/runs.csv",
+        "step_metrics_csv": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/step_metrics.csv",
+        "probe_metrics_csv": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/probe_metrics.csv",
+        "detector_summary_csv": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/detector_summary.csv",
+        "detector_summary_json": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/detector_summary.json",
+        "stability_table_csv": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/stability_table.csv",
+        "stability_summary_json": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/stability_summary.json",
+        "representative_timeseries_png": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/figures/representative_timeseries.png",
+        "onset_ordering_png": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control/figures/onset_ordering.png"
       },
       "run_summaries": [
         {
@@ -1818,7 +1818,7 @@
         "torch": "2.10.0",
         "matplotlib": "3.10.8"
       },
-      "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic",
+      "output_dir": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic",
       "representative_run_id": "seed0_lr0.0100_scale0.75",
       "primary_detector": "covariance_mismatch",
       "primary_detector_verdict": "INCONCLUSIVE",
@@ -2202,16 +2202,16 @@
         }
       },
       "artifact_files": {
-        "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/summary.json",
-        "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/runs.csv",
-        "step_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/step_metrics.csv",
-        "probe_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/probe_metrics.csv",
-        "detector_summary_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/detector_summary.csv",
-        "detector_summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/detector_summary.json",
-        "stability_table_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/stability_table.csv",
-        "stability_summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/stability_summary.json",
-        "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/figures/representative_timeseries.png",
-        "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/figures/onset_ordering.png"
+        "summary_json": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/summary.json",
+        "runs_csv": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/runs.csv",
+        "step_metrics_csv": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/step_metrics.csv",
+        "probe_metrics_csv": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/probe_metrics.csv",
+        "detector_summary_csv": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/detector_summary.csv",
+        "detector_summary_json": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/detector_summary.json",
+        "stability_table_csv": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/stability_table.csv",
+        "stability_summary_json": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/stability_summary.json",
+        "representative_timeseries_png": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/figures/representative_timeseries.png",
+        "onset_ordering_png": "artifacts/early_warning_research/20260322T133418Z_all/main_paired_mlp_stochastic/figures/onset_ordering.png"
       },
       "run_summaries": [
         {
@@ -2668,7 +2668,7 @@
         "torch": "2.10.0",
         "matplotlib": "3.10.8"
       },
-      "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic",
+      "output_dir": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic",
       "representative_run_id": "seed0_lr0.0100_scale0.75",
       "primary_detector": "covariance_mismatch",
       "primary_detector_verdict": "FALSIFIED",
@@ -3070,16 +3070,16 @@
         }
       },
       "artifact_files": {
-        "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/summary.json",
-        "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/runs.csv",
-        "step_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/step_metrics.csv",
-        "probe_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/probe_metrics.csv",
-        "detector_summary_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/detector_summary.csv",
-        "detector_summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/detector_summary.json",
-        "stability_table_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/stability_table.csv",
-        "stability_summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/stability_summary.json",
-        "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/figures/representative_timeseries.png",
-        "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/figures/onset_ordering.png"
+        "summary_json": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/summary.json",
+        "runs_csv": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/runs.csv",
+        "step_metrics_csv": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/step_metrics.csv",
+        "probe_metrics_csv": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/probe_metrics.csv",
+        "detector_summary_csv": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/detector_summary.csv",
+        "detector_summary_json": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/detector_summary.json",
+        "stability_table_csv": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/stability_table.csv",
+        "stability_summary_json": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/stability_summary.json",
+        "representative_timeseries_png": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/figures/representative_timeseries.png",
+        "onset_ordering_png": "artifacts/early_warning_research/20260322T133418Z_all/instant_break_control_stochastic/figures/onset_ordering.png"
       },
       "run_summaries": [
         {
@@ -3535,7 +3535,7 @@
         "torch": "2.10.0",
         "matplotlib": "3.10.8"
       },
-      "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/toy_sanity",
+      "output_dir": "artifacts/early_warning_research/20260322T133418Z_all/toy_sanity",
       "representative_run_id": "seed0_lr0.0100_scale0.75",
       "primary_detector": "scale_charge_mismatch",
       "primary_detector_verdict": "INCONCLUSIVE",
@@ -3588,16 +3588,16 @@
       },
       "stability_summary": null,
       "artifact_files": {
-        "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/summary.json",
-        "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/runs.csv",
-        "step_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/step_metrics.csv",
-        "probe_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/probe_metrics.csv",
-        "detector_summary_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/detector_summary.csv",
-        "detector_summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/detector_summary.json",
-        "stability_table_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/stability_table.csv",
+        "summary_json": "artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/summary.json",
+        "runs_csv": "artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/runs.csv",
+        "step_metrics_csv": "artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/step_metrics.csv",
+        "probe_metrics_csv": "artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/probe_metrics.csv",
+        "detector_summary_csv": "artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/detector_summary.csv",
+        "detector_summary_json": "artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/detector_summary.json",
+        "stability_table_csv": "artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/stability_table.csv",
         "stability_summary_json": null,
-        "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/figures/representative_timeseries.png",
-        "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/figures/onset_ordering.png"
+        "representative_timeseries_png": "artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/figures/representative_timeseries.png",
+        "onset_ordering_png": "artifacts/early_warning_research/20260322T133418Z_all/toy_sanity/figures/onset_ordering.png"
       },
       "run_summaries": [
         {

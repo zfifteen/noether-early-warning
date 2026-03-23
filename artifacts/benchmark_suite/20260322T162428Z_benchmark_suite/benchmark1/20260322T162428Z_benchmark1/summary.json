@@ -2,7 +2,7 @@
   "benchmark_name": "benchmark1",
   "benchmark1_verdict": "SUPPORTED",
   "timestamp_utc": "2026-03-22T16:26:01.618781+00:00",
-  "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/benchmark1/20260322T162428Z_benchmark1",
+  "output_dir": "artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/benchmark1/20260322T162428Z_benchmark1",
   "smoke": false,
   "direct_symmetry_detector": "covariance_mismatch",
   "benchmark_horizon_steps": 9600,
@@ -80,10 +80,10 @@
   },
   "representative_run_id": "seed2_lr0.0400_scale1.75",
   "artifact_files": {
-    "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/benchmark1/20260322T162428Z_benchmark1/summary.json",
-    "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/benchmark1/20260322T162428Z_benchmark1/runs.csv",
-    "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/benchmark1/20260322T162428Z_benchmark1/figures/representative_timeseries.png",
-    "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/benchmark1/20260322T162428Z_benchmark1/figures/onset_ordering.png"
+    "summary_json": "artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/benchmark1/20260322T162428Z_benchmark1/summary.json",
+    "runs_csv": "artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/benchmark1/20260322T162428Z_benchmark1/runs.csv",
+    "representative_timeseries_png": "artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/benchmark1/20260322T162428Z_benchmark1/figures/representative_timeseries.png",
+    "onset_ordering_png": "artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/benchmark1/20260322T162428Z_benchmark1/figures/onset_ordering.png"
   },
   "run_summaries": [
     {

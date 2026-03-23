@@ -1,7 +1,7 @@
 {
   "suite_name": "all",
   "timestamp_utc": "2026-03-22T13:05:44.742884+00:00",
-  "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all",
+  "output_dir": "artifacts/early_warning_research/20260322T130542Z_all",
   "smoke": true,
   "libraries": {
     "python": "3.13.0",
@@ -86,7 +86,7 @@
         "torch": "2.10.0",
         "matplotlib": "3.10.8"
       },
-      "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp",
+      "output_dir": "artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp",
       "representative_run_id": "seed0_lr0.0400_scale1.25",
       "verdict_stats": {
         "total_runs": 8,
@@ -99,12 +99,12 @@
         "median_lead_steps": 53.0
       },
       "artifact_files": {
-        "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp/summary.json",
-        "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp/runs.csv",
-        "step_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp/step_metrics.csv",
-        "probe_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp/probe_metrics.csv",
-        "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp/figures/representative_timeseries.png",
-        "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp/figures/onset_ordering.png"
+        "summary_json": "artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp/summary.json",
+        "runs_csv": "artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp/runs.csv",
+        "step_metrics_csv": "artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp/step_metrics.csv",
+        "probe_metrics_csv": "artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp/probe_metrics.csv",
+        "representative_timeseries_png": "artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp/figures/representative_timeseries.png",
+        "onset_ordering_png": "artifacts/early_warning_research/20260322T130542Z_all/main_paired_mlp/figures/onset_ordering.png"
       },
       "run_summaries": [
         {
@@ -350,7 +350,7 @@
         "torch": "2.10.0",
         "matplotlib": "3.10.8"
       },
-      "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/instant_break_control",
+      "output_dir": "artifacts/early_warning_research/20260322T130542Z_all/instant_break_control",
       "representative_run_id": "seed0_lr0.0200_scale0.75",
       "verdict_stats": {
         "total_runs": 8,
@@ -363,12 +363,12 @@
         "median_lead_steps": -20.0
       },
       "artifact_files": {
-        "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/instant_break_control/summary.json",
-        "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/instant_break_control/runs.csv",
-        "step_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/instant_break_control/step_metrics.csv",
-        "probe_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/instant_break_control/probe_metrics.csv",
-        "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/instant_break_control/figures/representative_timeseries.png",
-        "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/instant_break_control/figures/onset_ordering.png"
+        "summary_json": "artifacts/early_warning_research/20260322T130542Z_all/instant_break_control/summary.json",
+        "runs_csv": "artifacts/early_warning_research/20260322T130542Z_all/instant_break_control/runs.csv",
+        "step_metrics_csv": "artifacts/early_warning_research/20260322T130542Z_all/instant_break_control/step_metrics.csv",
+        "probe_metrics_csv": "artifacts/early_warning_research/20260322T130542Z_all/instant_break_control/probe_metrics.csv",
+        "representative_timeseries_png": "artifacts/early_warning_research/20260322T130542Z_all/instant_break_control/figures/representative_timeseries.png",
+        "onset_ordering_png": "artifacts/early_warning_research/20260322T130542Z_all/instant_break_control/figures/onset_ordering.png"
       },
       "run_summaries": [
         {
@@ -615,7 +615,7 @@
         "torch": "2.10.0",
         "matplotlib": "3.10.8"
       },
-      "output_dir": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/toy_sanity",
+      "output_dir": "artifacts/early_warning_research/20260322T130542Z_all/toy_sanity",
       "representative_run_id": "seed0_lr0.0100_scale0.75",
       "verdict_stats": {
         "total_runs": 8,
@@ -628,12 +628,12 @@
         "median_lead_steps": null
       },
       "artifact_files": {
-        "summary_json": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/toy_sanity/summary.json",
-        "runs_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/toy_sanity/runs.csv",
-        "step_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/toy_sanity/step_metrics.csv",
-        "probe_metrics_csv": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/toy_sanity/probe_metrics.csv",
-        "representative_timeseries_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/toy_sanity/figures/representative_timeseries.png",
-        "onset_ordering_png": "/Users/velocityworks/IdeaProjects/noether-early-warning/artifacts/early_warning_research/20260322T130542Z_all/toy_sanity/figures/onset_ordering.png"
+        "summary_json": "artifacts/early_warning_research/20260322T130542Z_all/toy_sanity/summary.json",
+        "runs_csv": "artifacts/early_warning_research/20260322T130542Z_all/toy_sanity/runs.csv",
+        "step_metrics_csv": "artifacts/early_warning_research/20260322T130542Z_all/toy_sanity/step_metrics.csv",
+        "probe_metrics_csv": "artifacts/early_warning_research/20260322T130542Z_all/toy_sanity/probe_metrics.csv",
+        "representative_timeseries_png": "artifacts/early_warning_research/20260322T130542Z_all/toy_sanity/figures/representative_timeseries.png",
+        "onset_ordering_png": "artifacts/early_warning_research/20260322T130542Z_all/toy_sanity/figures/onset_ordering.png"
       },
       "run_summaries": [
         {
