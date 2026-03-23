@@ -11,7 +11,7 @@ bibliography: references.bib
 link-citations: true
 colorlinks: true
 abstract: |
-  This technical note studies whether a drift observable can function as an earlier and practically useful warning signal than a direct symmetry observable under gradual symmetry breaking. The note does not propose a first-principles derivation or a universal law. Instead, it defines a four-part operational claim package and tests that package in a controlled paired-MLP regime. The benchmark suite asks whether drift becomes detectable before direct symmetry detection in the gradual regime, whether that ordering reverses in an instant-break control, whether drift is more sensitive under a fixed observation budget, and whether the direct symmetry detector is still sub-threshold at the exact moment the drift alarm fires. All four benchmarks support the claim package in the benchmarked regime. The central result is therefore not merely that drift can lead direct symmetry detection in hindsight, but that drift can be earlier in a way that is practically useful.
+  This technical note studies whether a drift observable can function as an earlier and practically useful warning signal than a direct symmetry observable under gradual symmetry breaking. The note does not propose a first-principles derivation or a universal law. Instead, it defines a four-part operational claim package and tests that package in a controlled paired-MLP regime. The benchmark suite asks whether drift becomes detectable before direct symmetry detection in the gradual regime, whether that ordering reverses in an instant-break control, whether drift is more sensitive under a fixed observation budget, and whether the direct symmetry detector is still sub-threshold at the exact moment the drift alarm fires. All four benchmarks support the claim package in the benchmarked regime. A follow-on detector-latency sweep then varies probe cadence, baseline count, and confirmation rules, and finds that the latency-normalized regime split remains stable across the tested grid. The central result is therefore not merely that drift can lead direct symmetry detection in hindsight, but that drift can be earlier in a way that is practically useful.
 ---
 
 **Keywords:** early warning; symmetry breaking; drift detection; training dynamics; benchmarking; neural networks; optimization
@@ -22,7 +22,7 @@ This note addresses a specific technical question: can a drift observable become
 
 The result presented here is a benchmarked empirical claim, not a universal law and not a first-principles derivation. The note does not attempt to prove that drift must lead direct symmetry detection in all systems. Instead, it defines a four-part practical early-warning claim and evaluates that package in a controlled benchmarked regime.
 
-The note therefore centers on a four-benchmark structure and its validated outcome in the paired-MLP regime implemented in the repository [@noetherearlywarning2026]. The claim package is cumulative: each benchmark tests a distinct requirement that must hold if drift is to count as a practically useful early warning rather than simply an earlier signal in hindsight.
+The note therefore centers on a four-benchmark structure and its validated outcome in the paired-MLP regime implemented in the repository [@noetherearlywarning2026]. The claim package is cumulative: each benchmark tests a distinct requirement that must hold if drift is to count as a practically useful early warning rather than simply an earlier signal in hindsight. A follow-on detector-latency sweep is also reported later in the note as strengthening evidence rather than as an additional core benchmark.
 
 # Core Claim
 
@@ -127,6 +127,16 @@ The cumulative logic matters. Benchmark 1 alone would show only an ordering resu
 
 The combined conclusion is therefore stronger than any single benchmark alone: in the benchmarked paired-MLP regime, drift functions as an earlier and practically useful warning signal than direct symmetry detection under gradual symmetry breaking.
 
+# Detector-Latency Sweep
+
+As a follow-on robustness check, the repository also evaluates whether the main split between the gradual and instant-break regimes survives explicit changes to detector cadence and confirmation rules. This sweep varies symmetry probe cadence across `{5, 10, 15, 20, 30}` steps, symmetry baseline probes across `{2, 3, 4}`, and symmetry consecutive-hit requirements across `{1, 2, 3}`. The point of the sweep is not to create a fifth benchmark. It is to test whether the regime-level result remains after detector mechanics are perturbed on purpose.
+
+The sweep was executed by running each training configuration once with dense symmetry probing every five steps and then deriving the coarser cadences by subsampling those same probe traces. Latency normalization was computed explicitly from the structural floor implied by the detector rules at each setting. This keeps the comparison focused on the quantity of interest: excess lead beyond detector opportunity.
+
+The result is stable at the regime level. Across all forty-five detector settings, the median excess lead remained positive in the gradual `B1` regime and non-positive in the instant-break `B2` control. The excess-median range was `45` to `110` in `B1` and `-121` to `-11` in `B2`. Full run-level sign consistency held in eighteen of the forty-five settings, so the strongest invariant is the regime-level split rather than identical per-run behavior under every setting.
+
+This sweep sharpens the interpretation of the main benchmark package. Raw lead magnitude is detector-sensitive and moves substantially as cadence, baseline count, and confirmation rules are changed. The regime-level excess-horizon split, however, is not explained away by those changes in the tested grid. The data therefore support a stronger reading of the main result: the gradual regime retains a real latency-normalized warning advantage, while the instant-break regime does not.
+
 # Limits and Scope
 
 This note validates the claim package only in the benchmarked paired-MLP regime implemented in this repository. That is the scope of the present evidence.
@@ -134,6 +144,8 @@ This note validates the claim package only in the benchmarked paired-MLP regime 
 The note does not claim universal validity across all systems, architectures, or optimization settings. Broader generality would require additional benchmark instantiations rather than stronger wording alone.
 
 The note also does not provide a first-principles derivation of the effect. The result presented here is empirical and operational: it is established through the benchmark logic and the observed benchmark outcomes.
+
+The detector-latency sweep reported here is a follow-on robustness result inside the same paired-MLP regime. It should not be read as a claim of universal invariance across all detector designs or all symmetry-breaking systems.
 
 Deeper mechanism questions and broader instantiation remain future work. The present note should therefore be read as a technical note on a validated benchmarked claim package, not as a general theorem about all symmetry-breaking systems.
 
@@ -149,7 +161,7 @@ The reversal control and the alarm-time result are especially important for that
 
 This note has presented a four-part benchmark package for early warning from drift before direct symmetry detection. The package tests ordering in the gradual regime, reversal in the instant-break control, finite-budget sensitivity, and exact alarm-time separation.
 
-In the benchmarked regime, all four benchmarks support the claim package. The clean takeaway is that drift is earlier than direct symmetry detection in a way that is practically useful, not merely earlier in hindsight.
+In the benchmarked regime, all four benchmarks support the claim package. The follow-on detector-latency sweep strengthens that interpretation by showing that the regime-level sign split survives the tested cadence, baseline, and confirmation changes. The clean takeaway is that drift is earlier than direct symmetry detection in a way that is practically useful, not merely earlier in hindsight.
 
 # Artifact References
 
@@ -157,3 +169,5 @@ In the benchmarked regime, all four benchmarks support the claim package. The cl
 - [Atomic benchmark test plan](../docs/benchmark_test_plan.md)
 - [Consolidated benchmark suite summary](../artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/summary.json)
 - [Consolidated benchmark suite report](../artifacts/benchmark_suite/20260322T162428Z_benchmark_suite/REPORT.md)
+- [Detector-latency sweep summary](../artifacts/exploratory/20260323T082341Z_latency_sweep/summary.json)
+- [Detector-latency sweep pair-setting summary](../artifacts/exploratory/20260323T082341Z_latency_sweep/pair_setting_summary.csv)
