@@ -1,0 +1,23 @@
+{
+  "title": "noether-early-warning: Atomic benchmark suite for drift as an earlier warning signal than direct symmetry detection",
+  "description": "Research software and supporting computational material for an operational benchmark package showing that drift can function as an earlier and practically useful warning signal than direct symmetry detection under gradual symmetry breaking. The repository contains benchmark implementations, reproducible artifacts, a technical note, and a follow-on detector-latency sweep showing that the regime-level excess warning horizon remains stable across tested cadence, baseline, and confirmation settings in the paired-MLP regime.",
+  "creators": [
+    {
+      "name": "Lopez III, Dionisio Alberto"
+    }
+  ],
+  "license": "mit",
+  "keywords": [
+    "early warning",
+    "symmetry breaking",
+    "drift detection",
+    "training dynamics",
+    "benchmarking",
+    "neural networks",
+    "optimization",
+    "machine learning"
+  ],
+  "access_right": "open",
+  "upload_type": "software",
+  "related_identifiers": []
+}
