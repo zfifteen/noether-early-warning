@@ -23,6 +23,8 @@ This means benchmark failure is narrow by design. If one benchmark fails, that f
 
 The current claims document breaks into four atomic empirical benchmark targets.
 
+For the current paired-MLP suite, `drift` means rolling update-norm onset and `direct symmetry` means covariance mismatch across paired units. This plan does not presently benchmark a conserved quantity against its derivative, and it does not establish a universal Noether-style claim.
+
 Benchmark 1 tests this statement only:
 
 drift becomes detectable before direct symmetry detection.
@@ -74,9 +76,9 @@ Its implementation pair is:
 
 The benchmark program therefore maps to the current claims document like this:
 
-- Benchmark 1: earliest reliable evidence appears first in the conserved quantity
+- Benchmark 1: earliest reliable evidence appears first in the process channel
 - Benchmark 2: the ordering is specific to gradual breaking and should reverse in an instant-break regime
-- Benchmark 3: conservation drift is the more sensitive practical probe under finite observation budgets
+- Benchmark 3: the process channel is the more sensitive practical probe under finite observation budgets
 - Benchmark 4: the drift signal is visible while the direct symmetry signal is still subthreshold at the same timepoint
 
 Anything broader than those four pieces is not yet a separate benchmark target. Broader interpretation, mechanism language, and downstream implications should be added only after they are reduced to an equally narrow test sentence.

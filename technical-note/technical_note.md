@@ -11,7 +11,7 @@ bibliography: references.bib
 link-citations: true
 colorlinks: true
 abstract: |
-  This technical note studies whether a drift observable can function as an earlier and practically useful warning signal than a direct symmetry observable under gradual symmetry breaking. The note does not propose a first-principles derivation or a universal law. Instead, it defines a four-part operational claim package and tests that package in a controlled paired-MLP regime. The benchmark suite asks whether drift becomes detectable before direct symmetry detection in the gradual regime, whether that ordering reverses in an instant-break control, whether drift is more sensitive under a fixed observation budget, and whether the direct symmetry detector is still sub-threshold at the exact moment the drift alarm fires. All four benchmarks support the claim package in the benchmarked regime. A follow-on detector-latency sweep then varies probe cadence, baseline count, and confirmation rules, and finds that the latency-normalized regime split remains stable across the tested grid. The central result is therefore not merely that drift can lead direct symmetry detection in hindsight, but that drift can be earlier in a way that is practically useful.
+  This technical note studies whether a drift observable can function as an earlier and practically useful warning signal than a direct symmetry observable under gradual symmetry breaking. The note does not propose a first-principles derivation or a universal law. Instead, it defines a four-part operational claim package and tests that package in a controlled paired-MLP regime. The benchmark suite asks whether drift becomes detectable before direct symmetry detection in the gradual regime, whether that ordering reverses in an instant-break control, whether drift is more sensitive under a fixed observation budget, and whether the direct symmetry detector is still sub-threshold at the exact moment the drift alarm fires. All four benchmarks support the claim package in the benchmarked regime. A follow-on detector-latency sweep then varies probe cadence, baseline count, and confirmation rules, and finds that the latency-normalized regime split remains stable across the tested grid. The stronger supported reading is therefore an operational asymmetry in detectability: in this paired-MLP regime, an update-process observable carries earlier warning than a direct structural symmetry observable.
 ---
 
 **Keywords:** early warning; symmetry breaking; drift detection; training dynamics; benchmarking; neural networks; optimization
@@ -20,7 +20,7 @@ abstract: |
 
 This note addresses a specific technical question: can a drift observable become detectably and usefully earlier than a direct symmetry observable under gradual symmetry breaking? The issue is not merely whether one signal can precede another in retrospect. The issue is whether the earlier signal remains operationally meaningful under fixed detection rules and realistic monitoring constraints.
 
-The result presented here is a benchmarked empirical claim, not a universal law and not a first-principles derivation. The note does not attempt to prove that drift must lead direct symmetry detection in all systems. Instead, it defines a four-part practical early-warning claim and evaluates that package in a controlled benchmarked regime.
+The result presented here is a benchmarked empirical claim, not a universal law and not a first-principles derivation. The note does not attempt to prove that drift must lead direct symmetry detection in all systems. It also does not directly compare a conserved quantity against its derivative. Instead, it defines a four-part practical early-warning claim and evaluates that package in a controlled benchmarked regime.
 
 The note therefore centers on a four-benchmark structure and its validated outcome in the paired-MLP regime implemented in the repository [@noetherearlywarning2026]. The claim package is cumulative: each benchmark tests a distinct requirement that must hold if drift is to count as a practically useful early warning rather than simply an earlier signal in hindsight. A follow-on detector-latency sweep is also reported later in the note as strengthening evidence rather than as an additional core benchmark.
 
@@ -37,6 +37,8 @@ The claim package has four parts:
 
 Taken together, these four claims define the practical early-warning statement tested in this repository. The package is stronger than a simple precedence claim because it also tests regime specificity, finite-budget usefulness, and alarm-time usefulness.
 
+The stronger supported implication is narrower than a universal Noether-style theorem. In the benchmarked paired-MLP regime, an update-process observable becomes detectably earlier than a direct structural symmetry observable. The note does not claim that all conserved quantities are best monitored through their causal drivers, and it does not directly benchmark a conserved quantity against its time derivative.
+
 # Why the Claim Is Nontrivial
 
 Claims about detector ordering are weak when they only show that one signal can appear before another in hindsight. Many indirect statistics can move before more explicit state variables do, but that fact alone does not establish that the earlier statistic is a meaningful warning signal.
@@ -47,7 +49,7 @@ The contribution is therefore the benchmarked structure of the claim rather than
 
 # Benchmark Logic
 
-The benchmark program is built around two observable families. The first is a drift observable, defined here through a training-time signal that accumulates through the update process. The second is a direct symmetry observable, defined through a detector that measures visible symmetry violation in the monitored structure itself.
+The benchmark program is built around two observable families. The first is a drift observable, implemented here as a rolling onset detector on update norms. The second is a direct symmetry observable, implemented here as covariance mismatch across paired units.
 
 In this note, detectability is treated as an operational event rather than a vague visual impression. A signal counts as detectable when it crosses a pre-registered detection rule. That framing matters because the note is about practical early warning, and practical early warning depends on when an alarm is actually triggered, not when a curve begins to look different by eye.
 
@@ -60,6 +62,12 @@ Benchmark 3 is required because practical usefulness depends on observation limi
 Benchmark 4 is required because even finite-budget sensitivity is still not the same as alarm-time usefulness. A drift detector is most compelling as an early warning if, at the exact moment the alarm fires, the direct symmetry detector is usually still silent. Benchmark 4 is designed to test exactly that condition using the saved model state at drift onset.
 
 The resulting four benchmarks form a cumulative practical early-warning test rather than four disconnected experiments. Benchmark 1 establishes existence, Benchmark 2 establishes regime specificity, Benchmark 3 establishes finite-budget utility, and Benchmark 4 establishes alarm-time utility.
+
+# Structural Implication
+
+The strongest supported structural implication of the benchmark package is an operational asymmetry in detectability. In the gradual paired-MLP regime, the update process carries earlier warning than the direct symmetry metric. The detector-latency sweep sharpens this point by showing that a positive excess warning horizon remains in the gradual regime after accounting for detector opportunity, while the instant-break control does not.
+
+This is a narrower statement than saying the repository proves a universal theorem about Noether's theorem itself. The note does not establish a domain-general law for all conserved quantities, and it does not directly compare a conserved quantity against its derivative. It establishes a controlled empirical result about process observables and direct structural observables in the measured regime.
 
 # Experimental Setup
 
@@ -125,7 +133,7 @@ Taken together, the four benchmarks support a single coherent claim package. Ben
 
 The cumulative logic matters. Benchmark 1 alone would show only an ordering result. Benchmark 2 shows that the ordering depends on the regime. Benchmark 3 shows that the ordering has practical value under monitoring constraints. Benchmark 4 shows that the practical value survives at the actual alarm time rather than collapsing into a delayed-probe artifact.
 
-The combined conclusion is therefore stronger than any single benchmark alone: in the benchmarked paired-MLP regime, drift functions as an earlier and practically useful warning signal than direct symmetry detection under gradual symmetry breaking.
+The combined conclusion is therefore stronger than any single benchmark alone: in the benchmarked paired-MLP regime, the update-process channel functions as an earlier and practically useful warning signal than direct symmetry detection under gradual symmetry breaking.
 
 # Detector-Latency Sweep
 
@@ -145,13 +153,15 @@ The note does not claim universal validity across all systems, architectures, or
 
 The note also does not provide a first-principles derivation of the effect. The result presented here is empirical and operational: it is established through the benchmark logic and the observed benchmark outcomes.
 
+The present suite does not directly measure a conserved quantity and its time derivative. Its measured pair is update-norm drift versus covariance-based direct symmetry detection.
+
 The detector-latency sweep reported here is a follow-on robustness result inside the same paired-MLP regime. It should not be read as a claim of universal invariance across all detector designs or all symmetry-breaking systems.
 
 Deeper mechanism questions and broader instantiation remain future work. The present note should therefore be read as a technical note on a validated benchmarked claim package, not as a general theorem about all symmetry-breaking systems.
 
 # Practical Interpretation
 
-The practical meaning of the result is straightforward. In systems where breakdown is gradual rather than instantaneous, it can be useful to monitor a drift signal before waiting for a direct symmetry metric to cross threshold.
+The practical meaning of the result is straightforward. In systems where breakdown is gradual rather than instantaneous, it can be useful to monitor a process signal before waiting for a direct symmetry metric to cross threshold.
 
 This matters because direct symmetry metrics may lag the underlying transition. If a drift alarm becomes detectable first and remains informative under finite monitoring limits, then it can serve as an earlier decision signal rather than merely an earlier retrospective observation.
 
@@ -161,7 +171,7 @@ The reversal control and the alarm-time result are especially important for that
 
 This note has presented a four-part benchmark package for early warning from drift before direct symmetry detection. The package tests ordering in the gradual regime, reversal in the instant-break control, finite-budget sensitivity, and exact alarm-time separation.
 
-In the benchmarked regime, all four benchmarks support the claim package. The follow-on detector-latency sweep strengthens that interpretation by showing that the regime-level sign split survives the tested cadence, baseline, and confirmation changes. The clean takeaway is that drift is earlier than direct symmetry detection in a way that is practically useful, not merely earlier in hindsight.
+In the benchmarked regime, all four benchmarks support the claim package. The follow-on detector-latency sweep strengthens that interpretation by showing that the regime-level sign split survives the tested cadence, baseline, and confirmation changes. The clean takeaway is that the update process carries earlier practical warning than direct symmetry detection in this measured regime, not merely earlier raw detector ordering in hindsight.
 
 # Artifact References
 

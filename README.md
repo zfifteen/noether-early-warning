@@ -49,6 +49,14 @@ The key idea is that these two kinds of signal do not have to become visible on 
 
 The practical version of the claim is stricter than simple hindsight ordering. A useful early warning signal should appear first in gradual regimes, reverse in instant-break controls, remain easier to detect under finite observation limits, and still be useful at the exact moment the alarm fires. The benchmark suite is designed to test that stronger practical version directly.
 
+## What the Result Implies
+
+The strongest supported reading of the benchmark package is an operational asymmetry in detectability. In the paired-MLP regime tested here, a process observable tied to the update trajectory becomes detectable before a direct structural symmetry observable. In this repository, the process channel is a rolling update-norm onset detector and the direct channel is covariance mismatch across paired units.
+
+The detector-latency sweep sharpens that interpretation. After accounting for detector opportunity, the gradual regime retains a positive excess warning horizon while the instant-break control does not.
+
+This repository does not claim a universal law or a first-principles derivation about all Noether-conserved quantities. It does not directly benchmark a conserved quantity against its derivative. The validated claim is narrower: under gradual symmetry breaking in the benchmarked regime, process observables can provide earlier practical warning than direct symmetry observables.
+
 ## Benchmark Design
 
 The conclusion rests on four atomic benchmarks:
@@ -229,6 +237,8 @@ The package works because the four benchmarks answer different questions cleanly
 
 Taken together, they do not just show that drift can come first. They show that the signal is early, regime-specific, more sensitive under practical limits, and still useful at the moment the alarm actually fires.
 
+The detector-latency sweep adds one more point: the main effect is not exhausted by detector cadence alone. In the benchmarked gradual regime, the update-norm channel retains a latency-normalized warning advantage over the direct symmetry channel.
+
 ## Fine-Grained Breakdown
 
 ### B1 Fine-Grained View
@@ -274,4 +284,4 @@ The benchmark suite supports the full claims package expressed in [core_claim.md
 
 The main conclusion is simple:
 
-In the benchmarked gradual symmetry-breaking regime, drift is not only earlier than direct symmetry detection. It is earlier in a way that is practically useful.
+In the benchmarked gradual symmetry-breaking regime, the rolling update-norm channel is not only earlier than direct covariance-based symmetry detection. It is earlier in a way that remains practically useful after accounting for detector opportunity.
